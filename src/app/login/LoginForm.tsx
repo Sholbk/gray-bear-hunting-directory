@@ -33,8 +33,8 @@ export default function LoginForm() {
 
       router.push(redirect);
       router.refresh();
-    } catch {
-      setError("An unexpected error occurred");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unexpected error occurred. Check that Supabase is configured correctly.");
     } finally {
       setLoading(false);
     }
