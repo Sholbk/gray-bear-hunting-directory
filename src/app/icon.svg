@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Ears -->
+  <circle cx="16" cy="12" r="9" fill="#2d5115"/>
+  <circle cx="48" cy="12" r="9" fill="#2d5115"/>
+  <circle cx="16" cy="12" r="5" fill="#3d6b1e"/>
+  <circle cx="48" cy="12" r="5" fill="#3d6b1e"/>
+  <!-- Head -->
+  <ellipse cx="32" cy="30" rx="22" ry="20" fill="#2d5115"/>
+  <!-- Muzzle -->
+  <ellipse cx="32" cy="37" rx="11" ry="9" fill="#3d6b1e"/>
+  <!-- Eyes -->
+  <circle cx="23" cy="26" r="3" fill="#f5f1eb"/>
+  <circle cx="41" cy="26" r="3" fill="#f5f1eb"/>
+  <circle cx="23.5" cy="25.5" r="1.5" fill="#181f13"/>
+  <circle cx="41.5" cy="25.5" r="1.5" fill="#181f13"/>
+  <!-- Nose -->
+  <ellipse cx="32" cy="33" rx="4" ry="3" fill="#181f13"/>
+  <ellipse cx="32" cy="32.5" rx="1.5" ry="0.8" fill="white" opacity="0.3"/>
+  <!-- Mouth -->
+  <path d="M29 37 Q32 41 35 37" fill="none" stroke="#181f13" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

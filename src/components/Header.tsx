@@ -5,6 +5,7 @@ import { useState } from "react";
 import NavDropdown from "./NavDropdown";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle";
+import BearLogo from "./BearLogo";
 
 const findItems = [
   { label: "Browse All Listings", href: "/search" },
@@ -36,7 +37,7 @@ export default function Header() {
       <div className="lg:hidden">
         <div className="max-w-md mx-auto px-4 flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-2xl">landscape</span>
+            <BearLogo className="w-7 h-7" />
             <span className="font-bold text-lg tracking-tight">Gray Bear</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -54,7 +55,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-2xl">landscape</span>
+              <BearLogo className="w-7 h-7" />
               <span className="font-bold text-xl tracking-tight">Gray Bear</span>
               <span className="text-text-inverse/70 text-sm ml-1">Hunting Directory</span>
             </Link>

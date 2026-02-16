@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BearLogo from "./BearLogo";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="material-symbols-outlined text-xl">landscape</span>
+              <BearLogo className="w-6 h-6" />
               <h3 className="font-bold text-lg">Gray Bear</h3>
             </div>
             <p className="text-text-inverse/60 text-sm leading-relaxed">
