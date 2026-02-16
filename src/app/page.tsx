@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import CategoryCards from "@/components/CategoryCards";
 import FeaturedListings from "@/components/FeaturedListings";
 import { getAllListings, getAllStates } from "@/lib/listings";
+import { categories } from "@/data/categories";
 
 export default function HomePage() {
   const totalListings = getAllListings().length;
@@ -30,7 +31,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-3xl sm:text-4xl font-bold text-amber-brand">
-                3
+                {categories.length}
               </p>
               <p className="text-gray-muted text-sm mt-1">Categories</p>
             </div>

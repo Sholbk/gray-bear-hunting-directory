@@ -9,10 +9,20 @@ interface ListingCardProps {
   listing: Listing;
 }
 
-const typeLabels: Record<Listing["type"], string> = {
+const typeLabels: Record<string, string> = {
   guide: "Guide",
   outfitter: "Outfitter",
   charter: "Charter",
+  lodge: "Lodge",
+  land: "Land",
+  boat: "Boat/Vehicle",
+  taxidermy: "Taxidermy",
+  retailer: "Retailer",
+  "dog-trainer": "Dog Trainer",
+  "shooting-range": "Range",
+  education: "Education",
+  processor: "Processor",
+  photographer: "Photographer",
 };
 
 export default function ListingCard({ listing }: ListingCardProps) {
@@ -24,11 +34,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
       <div className="relative h-48 bg-gray-medium">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-light/50 to-gray-medium flex items-center justify-center">
           <span className="text-5xl opacity-30">
-            {listing.type === "guide"
-              ? "🎯"
-              : listing.type === "outfitter"
-              ? "🏕️"
-              : "🎣"}
+            {listing.type === "guide" ? "🎯" : listing.type === "outfitter" ? "🏕️" : listing.type === "charter" ? "🎣" : "📍"}
           </span>
         </div>
         <div className="absolute top-3 left-3">

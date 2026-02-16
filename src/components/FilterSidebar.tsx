@@ -107,6 +107,14 @@ export default function FilterSidebar() {
             { value: "guide", label: "Guides" },
             { value: "outfitter", label: "Outfitters" },
             { value: "charter", label: "Charters" },
+            { value: "lodge", label: "Lodges" },
+            { value: "boat", label: "Boats & Vehicles" },
+            { value: "taxidermy", label: "Taxidermy" },
+            { value: "retailer", label: "Retailers" },
+            { value: "dog-trainer", label: "Gun Dogs" },
+            { value: "shooting-range", label: "Shooting Ranges" },
+            { value: "education", label: "Education" },
+            { value: "processor", label: "Game Processing" },
           ].map((opt) => (
             <label
               key={opt.value}

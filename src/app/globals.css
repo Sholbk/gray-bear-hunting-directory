@@ -22,6 +22,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Light theme overrides */
+[data-theme="light"] {
+  --color-gray-dark: #ffffff;
+  --color-gray-darker: #f9fafb;
+  --color-gray-medium: #f3f4f6;
+  --color-gray-light: #e5e7eb;
+  --color-gray-muted: #6b7280;
+  --color-gray-text: #374151;
+  --color-background: #f9fafb;
+  --color-foreground: #111827;
+}
+
 /* Range slider styling */
 input[type="range"] {
   -webkit-appearance: none;
@@ -49,4 +61,8 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   cursor: pointer;
   border: none;
+}
+
+[data-theme="light"] input[type="range"] {
+  background: #d1d5db;
 }

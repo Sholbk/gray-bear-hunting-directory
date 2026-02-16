@@ -3,6 +3,7 @@ import { Listing, FilterParams } from "@/types";
 
 const listings: Listing[] = listingsData as Listing[];
 
+// Static data access (used for builds and when Supabase isn't configured)
 export function getAllListings(): Listing[] {
   return listings;
 }
@@ -15,11 +16,11 @@ export function getFeaturedListings(): Listing[] {
   return listings.filter((l) => l.featured);
 }
 
-export function getListingsByType(type: Listing["type"]): Listing[] {
+export function getListingsByType(type: string): Listing[] {
   return listings.filter((l) => l.type === type);
 }
 
-export function getTypeCount(type: Listing["type"]): number {
+export function getTypeCount(type: string): number {
   return listings.filter((l) => l.type === type).length;
 }
 

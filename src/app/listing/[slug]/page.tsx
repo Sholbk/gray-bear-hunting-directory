@@ -26,10 +26,20 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   });
 }
 
-const typeLabels = {
+const typeLabels: Record<string, string> = {
   guide: "Hunting Guide",
   outfitter: "Outfitter",
   charter: "Fishing Charter",
+  lodge: "Lodge",
+  land: "Land",
+  boat: "Boats & Vehicles",
+  taxidermy: "Taxidermy",
+  retailer: "Retailer",
+  "dog-trainer": "Gun Dog Trainer",
+  "shooting-range": "Shooting Range",
+  education: "Education",
+  processor: "Game Processor",
+  photographer: "Photographer",
 };
 
 export default async function ListingDetailPage({
@@ -51,11 +61,7 @@ export default async function ListingDetailPage({
         <div className="absolute inset-0 bg-gradient-to-br from-gray-dark via-gray-darker to-gray-dark" />
         <div className="absolute inset-0 flex items-center justify-center opacity-10">
           <span className="text-[200px]">
-            {listing.type === "guide"
-              ? "🎯"
-              : listing.type === "outfitter"
-              ? "🏕️"
-              : "🎣"}
+            {listing.type === "guide" ? "🎯" : listing.type === "outfitter" ? "🏕️" : listing.type === "charter" ? "🎣" : "📍"}
           </span>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
