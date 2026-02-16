@@ -16,18 +16,18 @@ export default function BearLogo({ className = "w-7 h-7" }: { className?: string
       {/* Muzzle */}
       <ellipse cx="32" cy="37" rx="11" ry="9" opacity="0.25" />
       {/* Eyes */}
-      <circle cx="23" cy="26" r="3" fill="#181f13" />
-      <circle cx="41" cy="26" r="3" fill="#181f13" />
+      <circle cx="23" cy="26" r="3" fill="#1a1a1a" />
+      <circle cx="41" cy="26" r="3" fill="#1a1a1a" />
       <circle cx="24" cy="25" r="1" fill="white" />
       <circle cx="42" cy="25" r="1" fill="white" />
       {/* Nose */}
-      <ellipse cx="32" cy="33" rx="4" ry="3" fill="#181f13" />
+      <ellipse cx="32" cy="33" rx="4" ry="3" fill="#1a1a1a" />
       <ellipse cx="32" cy="32.5" rx="1.5" ry="0.8" fill="white" opacity="0.4" />
       {/* Mouth */}
       <path
         d="M29 37 Q32 41 35 37"
         fill="none"
-        stroke="#181f13"
+        stroke="#1a1a1a"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
