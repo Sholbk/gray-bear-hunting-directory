@@ -65,11 +65,11 @@ Don't get so focused on the harvest that you miss the beauty of elk country. Som
 
 export default function BlogPostPage() {
   return (
-    <div className="bg-gray-darker min-h-screen">
+    <div className="bg-bg-light min-h-screen">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link
           href="/blog"
-          className="inline-flex items-center text-gray-muted hover:text-amber-brand transition-colors text-sm mb-8"
+          className="inline-flex items-center text-text-muted hover:text-accent transition-colors text-sm mb-8"
         >
           &larr; Back to Blog
         </Link>
@@ -80,16 +80,16 @@ export default function BlogPostPage() {
               {samplePost.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium text-amber-brand bg-amber-brand/10 px-2 py-1 rounded"
+                  className="text-xs font-medium text-accent bg-accent/10 px-2 py-1 rounded"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-text mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
               {samplePost.title}
             </h1>
-            <div className="flex items-center gap-3 text-sm text-gray-muted">
+            <div className="flex items-center gap-3 text-sm text-text-muted">
               <span>By {samplePost.author}</span>
               <span>·</span>
               <span>{samplePost.date}</span>
@@ -97,7 +97,7 @@ export default function BlogPostPage() {
           </div>
 
           <div className="prose prose-invert max-w-none">
-            <div className="text-gray-text leading-relaxed space-y-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-gray-text [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-gray-text [&_h3]:mt-6 [&_h3]:mb-2 [&_p]:text-gray-muted [&_p]:leading-relaxed [&_a]:text-amber-brand [&_a]:hover:text-amber-light [&_em]:text-gray-muted [&_hr]:border-gray-light [&_hr]:my-8">
+            <div className="text-text-primary leading-relaxed space-y-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-text-primary [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-text-primary [&_h3]:mt-6 [&_h3]:mb-2 [&_p]:text-text-muted [&_p]:leading-relaxed [&_a]:text-accent [&_a]:hover:text-accent-light [&_em]:text-text-muted [&_hr]:border-border [&_hr]:my-8">
               {samplePost.content.split("\n\n").map((block, i) => {
                 if (block.startsWith("## ")) {
                   return <h2 key={i}>{block.replace("## ", "")}</h2>;

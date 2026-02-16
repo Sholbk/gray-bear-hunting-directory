@@ -31,51 +31,54 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="bg-gray-dark border-b border-gray-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 bg-primary text-text-inverse">
+      {/* Mobile Header */}
+      <div className="lg:hidden">
+        <div className="max-w-md mx-auto px-4 flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-amber-brand text-2xl font-bold tracking-tight">
-              Gray Bear
-            </span>
-            <span className="text-gray-text text-sm hidden sm:inline">
-              Hunting Directory
-            </span>
+            <span className="material-symbols-outlined text-2xl">landscape</span>
+            <span className="font-bold text-lg tracking-tight">Gray Bear</span>
           </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <NavDropdown label="Find" items={findItems} />
-            <NavDropdown label="Categories" items={categoryItems} />
-            <Link href="/blog" className="text-gray-text hover:text-amber-brand transition-colors text-sm font-medium">
-              Blog
-            </Link>
-            <Link href="/calendar" className="text-gray-text hover:text-amber-brand transition-colors text-sm font-medium">
-              Calendar
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
-            <div className="hidden lg:flex items-center gap-3">
-              <Link href="/login" className="text-gray-text hover:text-amber-brand transition-colors text-sm font-medium">
+            <button className="relative p-2" aria-label="Notifications">
+              <span className="material-symbols-outlined text-xl">notifications</span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Header */}
+      <div className="hidden lg:block">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-2xl">landscape</span>
+              <span className="font-bold text-xl tracking-tight">Gray Bear</span>
+              <span className="text-text-inverse/70 text-sm ml-1">Hunting Directory</span>
+            </Link>
+
+            <nav className="flex items-center gap-6">
+              <NavDropdown label="Find" items={findItems} />
+              <NavDropdown label="Categories" items={categoryItems} />
+              <Link href="/blog" className="text-text-inverse/80 hover:text-white transition-colors text-sm font-medium">
+                Blog
+              </Link>
+              <Link href="/calendar" className="text-text-inverse/80 hover:text-white transition-colors text-sm font-medium">
+                Calendar
+              </Link>
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <Link href="/login" className="text-text-inverse/80 hover:text-white transition-colors text-sm font-medium">
                 Log In
               </Link>
-              <Link href="/signup" className="bg-amber-brand text-gray-dark px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-light transition-colors">
+              <Link href="/signup" className="bg-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-light transition-colors">
                 Sign Up
               </Link>
             </div>
-
-            {/* Mobile Hamburger */}
-            <button
-              onClick={() => setMobileOpen(true)}
-              className="lg:hidden p-2 text-gray-muted hover:text-white"
-              aria-label="Open menu"
-            >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

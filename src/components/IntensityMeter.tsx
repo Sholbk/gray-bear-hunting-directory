@@ -20,15 +20,15 @@ export default function IntensityMeter({
                 ? level <= 2
                   ? "bg-green-500"
                   : level <= 3
-                  ? "bg-amber-brand"
+                  ? "bg-accent"
                   : "bg-red-500"
-                : "bg-gray-light"
+                : "bg-border"
             }`}
           />
         ))}
       </div>
       {showLabel && (
-        <span className="text-xs text-gray-muted">{labels[level]}</span>
+        <span className="text-xs text-text-muted">{labels[level]}</span>
       )}
     </div>
   );

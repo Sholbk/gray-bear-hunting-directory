@@ -51,13 +51,13 @@ const plans: MembershipPlan[] = [
 
 export default function MembershipPage() {
   return (
-    <div className="bg-gray-darker min-h-screen">
+    <div className="bg-bg-light min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-text mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
             Membership Plans
           </h1>
-          <p className="text-gray-muted max-w-2xl mx-auto">
+          <p className="text-text-muted max-w-2xl mx-auto">
             List your business on the most trusted hunting and fishing directory. Choose the plan that fits your needs.
           </p>
         </div>

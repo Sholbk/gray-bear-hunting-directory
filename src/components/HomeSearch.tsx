@@ -1,0 +1,107 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+export default function HomeSearch() {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const [region, setRegion] = useState("");
+  const [species, setSpecies] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (query) params.set("query", query);
+    if (region) params.set("state", region);
+    if (species) params.set("species", species);
+    router.push(`/search?${params.toString()}`);
+  };
+
+  return (
+    <section className="px-4 py-6 max-w-md mx-auto lg:max-w-3xl">
+      <h1 className="text-2xl lg:text-4xl font-bold text-text-primary mb-1">
+        Find Your Next
+      </h1>
+      <h1 className="text-2xl lg:text-4xl font-bold text-primary mb-4">
+        Adventure
+      </h1>
+
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="relative">
+          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">
+            search
+          </span>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search guides, outfitters, species..."
+            className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+          />
+        </div>
+
+        <div className="flex gap-3">
+          <div className="relative flex-1">
+            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-lg">
+              location_on
+            </span>
+            <select
+              value={region}
+              onChange={(e) => setRegion(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none"
+            >
+              <option value="">Region</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Montana">Montana</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Texas">Texas</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Wyoming">Wyoming</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Florida">Florida</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="New York">New York</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Maine">Maine</option>
+            </select>
+          </div>
+          <div className="relative flex-1">
+            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-lg">
+              pets
+            </span>
+            <select
+              value={species}
+              onChange={(e) => setSpecies(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none"
+            >
+              <option value="">Species</option>
+              <option value="Elk">Elk</option>
+              <option value="Whitetail">Whitetail Deer</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Duck">Duck</option>
+              <option value="Pheasant">Pheasant</option>
+              <option value="Salmon">Salmon</option>
+              <option value="Bass">Bass</option>
+              <option value="Bear">Bear</option>
+              <option value="Moose">Moose</option>
+              <option value="Quail">Quail</option>
+            </select>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-accent hover:bg-accent-light text-white py-3.5 rounded-xl font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+        >
+          <span className="material-symbols-outlined text-lg">search</span>
+          Search Expeditions
+        </button>
+      </form>
+    </section>
+  );
+}

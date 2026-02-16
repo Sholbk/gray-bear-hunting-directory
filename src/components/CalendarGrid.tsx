@@ -16,7 +16,7 @@ const categoryColors: Record<string, string> = {
   season: "bg-green-500",
   expo: "bg-blue-500",
   class: "bg-purple-500",
-  tournament: "bg-amber-brand",
+  tournament: "bg-accent",
   meetup: "bg-pink-500",
 };
 
@@ -40,7 +40,7 @@ export default function CalendarGrid({ events }: CalendarGridProps) {
 
   const days = [];
   for (let i = 0; i < firstDay; i++) {
-    days.push(<div key={`empty-${i}`} className="h-24 bg-gray-dark/50 rounded" />);
+    days.push(<div key={`empty-${i}`} className="h-24 bg-bg-card/50 rounded" />);
   }
   for (let day = 1; day <= daysInMonth; day++) {
     const dayEvents = getEventsForDay(day);
@@ -52,11 +52,11 @@ export default function CalendarGrid({ events }: CalendarGridProps) {
     days.push(
       <div
         key={day}
-        className={`h-24 bg-gray-dark rounded p-1.5 border ${
-          isToday ? "border-amber-brand" : "border-gray-light/50"
+        className={`h-24 bg-bg-card rounded p-1.5 border ${
+          isToday ? "border-accent" : "border-border/50"
         }`}
       >
-        <span className={`text-xs font-medium ${isToday ? "text-amber-brand" : "text-gray-muted"}`}>
+        <span className={`text-xs font-medium ${isToday ? "text-accent" : "text-text-muted"}`}>
           {day}
         </span>
         <div className="mt-1 space-y-0.5">
@@ -64,14 +64,14 @@ export default function CalendarGrid({ events }: CalendarGridProps) {
             <div
               key={i}
               className={`text-[10px] text-white px-1 py-0.5 rounded truncate ${
-                categoryColors[evt.category] || "bg-gray-muted"
+                categoryColors[evt.category] || "bg-text-muted"
               }`}
             >
               {evt.title}
             </div>
           ))}
           {dayEvents.length > 2 && (
-            <span className="text-[10px] text-gray-muted">+{dayEvents.length - 2} more</span>
+            <span className="text-[10px] text-text-muted">+{dayEvents.length - 2} more</span>
           )}
         </div>
       </div>
@@ -81,17 +81,17 @@ export default function CalendarGrid({ events }: CalendarGridProps) {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <button onClick={prevMonth} className="text-gray-muted hover:text-amber-brand transition-colors p-2">
+        <button onClick={prevMonth} className="text-text-muted hover:text-accent transition-colors p-2">
           &larr;
         </button>
-        <h2 className="text-lg font-bold text-gray-text">{monthName}</h2>
-        <button onClick={nextMonth} className="text-gray-muted hover:text-amber-brand transition-colors p-2">
+        <h2 className="text-lg font-bold text-text-primary">{monthName}</h2>
+        <button onClick={nextMonth} className="text-text-muted hover:text-accent transition-colors p-2">
           &rarr;
         </button>
       </div>
       <div className="grid grid-cols-7 gap-1 mb-1">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
-          <div key={d} className="text-center text-xs font-medium text-gray-muted py-2">
+          <div key={d} className="text-center text-xs font-medium text-text-muted py-2">
             {d}
           </div>
         ))}

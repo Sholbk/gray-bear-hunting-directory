@@ -29,37 +29,37 @@ export default function ListingCard({ listing }: ListingCardProps) {
   return (
     <Link
       href={`/listing/${listing.slug}`}
-      className="group bg-gray-dark rounded-xl border border-gray-light hover:border-amber-brand transition-all hover:shadow-lg hover:shadow-amber-brand/10 overflow-hidden flex flex-col"
+      className="group bg-bg-card rounded-2xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10 overflow-hidden flex flex-col"
     >
-      <div className="relative h-48 bg-gray-medium">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-light/50 to-gray-medium flex items-center justify-center">
-          <span className="text-5xl opacity-30">
-            {listing.type === "guide" ? "🎯" : listing.type === "outfitter" ? "🏕️" : listing.type === "charter" ? "🎣" : "📍"}
+      <div className="relative h-48 bg-gradient-to-br from-primary/15 to-primary/5">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="material-symbols-outlined text-5xl text-primary/20">
+            {listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"}
           </span>
         </div>
         <div className="absolute top-3 left-3">
-          <span className="bg-amber-brand/90 text-gray-dark text-xs font-bold px-2.5 py-1 rounded-full">
+          <span className="bg-primary/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">
             {typeLabels[listing.type]}
           </span>
         </div>
         {listing.featured && (
           <div className="absolute top-3 right-3">
-            <span className="bg-gray-dark/80 text-amber-brand text-xs font-bold px-2.5 py-1 rounded-full border border-amber-brand/50">
+            <span className="bg-accent text-white text-xs font-bold px-2.5 py-1 rounded-full">
               Featured
             </span>
           </div>
         )}
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-white font-bold text-lg mb-1 group-hover:text-amber-brand transition-colors">
+        <h3 className="text-text-primary font-bold text-lg mb-1 group-hover:text-primary transition-colors">
           {listing.name}
         </h3>
-        <p className="text-gray-muted text-xs mb-3">
+        <p className="text-text-muted text-xs mb-3">
           {listing.location.city}, {listing.location.state}
         </p>
         <div className="flex items-center gap-3 mb-3">
           <RatingStars rating={listing.rating} size="sm" />
-          <span className="text-gray-muted text-xs">
+          <span className="text-text-muted text-xs">
             ({listing.reviewCount})
           </span>
         </div>
@@ -67,18 +67,18 @@ export default function ListingCard({ listing }: ListingCardProps) {
           {listing.species.slice(0, 3).map((s) => (
             <span
               key={s}
-              className="bg-gray-medium text-gray-text text-xs px-2 py-0.5 rounded"
+              className="bg-bg-input text-text-secondary text-xs px-2 py-0.5 rounded"
             >
               {s}
             </span>
           ))}
           {listing.species.length > 3 && (
-            <span className="text-gray-muted text-xs">
+            <span className="text-text-muted text-xs">
               +{listing.species.length - 3}
             </span>
           )}
         </div>
-        <div className="mt-auto pt-4 border-t border-gray-light flex items-center justify-between">
+        <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
           <SuccessRateBadge rate={listing.successRate} size="sm" />
           <PriceRange
             min={listing.priceRange.min}

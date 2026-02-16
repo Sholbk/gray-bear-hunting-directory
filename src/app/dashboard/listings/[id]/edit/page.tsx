@@ -7,8 +7,8 @@ export const metadata = {
 export default function EditListingPage() {
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-text mb-6">Edit Listing</h1>
-      <div className="bg-gray-dark rounded-xl border border-gray-light p-6">
+      <h1 className="text-2xl font-bold text-text-primary mb-6">Edit Listing</h1>
+      <div className="bg-bg-card rounded-2xl border border-border p-6">
         <ListingForm mode="edit" />
       </div>
     </div>

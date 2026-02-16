@@ -31,26 +31,21 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-gray-text hover:text-amber-brand transition-colors text-sm font-medium"
+        className="flex items-center gap-1 text-text-inverse/80 hover:text-white transition-colors text-sm font-medium"
       >
         {label}
-        <svg
-          className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        <span className={`material-symbols-outlined text-lg transition-transform ${open ? "rotate-180" : ""}`}>
+          expand_more
+        </span>
       </button>
       {open && (
-        <div className="absolute top-full left-0 mt-2 w-48 bg-gray-dark border border-gray-light rounded-lg shadow-xl py-2 z-50">
+        <div className="absolute top-full left-0 mt-2 w-48 bg-bg-card border border-border rounded-xl shadow-xl py-2 z-50">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm text-gray-text hover:text-amber-brand hover:bg-gray-medium transition-colors"
+              className="block px-4 py-2 text-sm text-text-primary hover:text-primary hover:bg-bg-input transition-colors"
             >
               {item.label}
             </Link>

@@ -1,45 +1,15 @@
-import Hero from "@/components/Hero";
-import CategoryCards from "@/components/CategoryCards";
-import FeaturedListings from "@/components/FeaturedListings";
-import { getAllListings, getAllStates } from "@/lib/listings";
-import { categories } from "@/data/categories";
+import HomeSearch from "@/components/HomeSearch";
+import CategoryScroller from "@/components/CategoryScroller";
+import FeaturedExpeditions from "@/components/FeaturedExpeditions";
+import RecentlyAdded from "@/components/RecentlyAdded";
 
 export default function HomePage() {
-  const totalListings = getAllListings().length;
-  const totalStates = getAllStates().length;
-
   return (
-    <>
-      <Hero />
-      <CategoryCards />
-
-      {/* Stats Bar */}
-      <section className="bg-gray-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-amber-brand">
-                {totalListings}
-              </p>
-              <p className="text-gray-muted text-sm mt-1">Verified Listings</p>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-amber-brand">
-                {totalStates}
-              </p>
-              <p className="text-gray-muted text-sm mt-1">States Covered</p>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-amber-brand">
-                {categories.length}
-              </p>
-              <p className="text-gray-muted text-sm mt-1">Categories</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <FeaturedListings />
-    </>
+    <div className="bg-bg-light min-h-screen">
+      <HomeSearch />
+      <CategoryScroller />
+      <FeaturedExpeditions />
+      <RecentlyAdded />
+    </div>
   );
 }

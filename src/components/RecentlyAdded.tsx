@@ -1,0 +1,74 @@
+import Link from "next/link";
+import { getAllListings } from "@/lib/listings";
+
+export default function RecentlyAdded() {
+  // Get non-featured listings as "recently added"
+  const all = getAllListings();
+  const recent = all.filter((l) => !l.featured).slice(0, 5);
+
+  return (
+    <section className="py-6">
+      <div className="max-w-md mx-auto lg:max-w-3xl px-4">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold text-text-primary">Recently Added</h2>
+          <Link href="/search" className="text-primary text-sm font-medium hover:underline">
+            See all
+          </Link>
+        </div>
+
+        <div className="space-y-3">
+          {recent.map((listing) => (
+            <Link
+              key={listing.slug}
+              href={`/listing/${listing.slug}`}
+              className="flex items-center gap-3 bg-bg-card rounded-xl p-3 border border-border hover:shadow-sm transition-shadow"
+            >
+              {/* Thumbnail placeholder */}
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0">
+                <span className="material-symbols-outlined text-2xl text-primary/40">
+                  {listing.type === "guide"
+                    ? "hiking"
+                    : listing.type === "charter"
+                    ? "sailing"
+                    : listing.type === "outfitter"
+                    ? "camping"
+                    : listing.type === "lodge"
+                    ? "cabin"
+                    : "location_on"}
+                </span>
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-text-primary text-sm truncate">
+                  {listing.name}
+                </h3>
+                <div className="flex items-center gap-1 text-text-muted text-xs mt-0.5">
+                  <span className="material-symbols-outlined text-xs">location_on</span>
+                  {listing.location.city}, {listing.location.state}
+                </div>
+                <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-0.5">
+                    <span className="material-symbols-outlined text-star text-xs">star</span>
+                    <span className="text-xs font-medium text-text-primary">
+                      {listing.rating.toFixed(1)}
+                    </span>
+                  </div>
+                  <span className="text-xs text-text-muted">
+                    {listing.species.slice(0, 2).join(", ")}
+                  </span>
+                </div>
+              </div>
+
+              <div className="text-right flex-shrink-0">
+                <p className="text-accent font-bold text-sm">
+                  ${listing.priceRange.min.toLocaleString()}
+                </p>
+                <p className="text-text-muted text-xs">per person</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

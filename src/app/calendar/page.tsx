@@ -23,26 +23,26 @@ const events = [
 
 export default function CalendarPage() {
   return (
-    <div className="bg-gray-darker min-h-screen">
+    <div className="bg-bg-light min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-text mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
             Events Calendar
           </h1>
-          <p className="text-gray-muted max-w-2xl mx-auto">
+          <p className="text-text-muted max-w-2xl mx-auto">
             Stay up to date with hunting seasons, outdoor expos, safety courses, and community events.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Calendar Grid */}
-          <div className="lg:col-span-2 bg-gray-dark rounded-xl border border-gray-light p-4">
+          <div className="lg:col-span-2 bg-bg-card rounded-xl border border-border p-4">
             <CalendarGrid events={events} />
           </div>
 
           {/* Upcoming Events List */}
           <div>
-            <h2 className="text-lg font-bold text-gray-text mb-4">Upcoming Events</h2>
+            <h2 className="text-lg font-bold text-text-primary mb-4">Upcoming Events</h2>
             <div className="space-y-3">
               {events.slice(0, 8).map((event, i) => (
                 <EventCard key={i} {...event} />

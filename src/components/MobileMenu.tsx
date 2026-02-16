@@ -40,13 +40,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div className="fixed inset-0 z-50 lg:hidden">
       <div className="fixed inset-0 bg-black/60" onClick={onClose} />
-      <div className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-gray-dark border-l border-gray-light overflow-y-auto">
-        <div className="flex items-center justify-between p-4 border-b border-gray-light">
-          <span className="text-amber-brand font-bold text-lg">Menu</span>
-          <button onClick={onClose} className="p-2 text-gray-muted hover:text-white">
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+      <div className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-bg-card border-l border-border overflow-y-auto">
+        <div className="flex items-center justify-between p-4 border-b border-border">
+          <span className="text-primary font-bold text-lg">Menu</span>
+          <button onClick={onClose} className="p-2 text-text-muted hover:text-text-primary">
+            <span className="material-symbols-outlined">close</span>
           </button>
         </div>
 
@@ -54,17 +52,17 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Find Section */}
           <button
             onClick={() => toggleSection("find")}
-            className="w-full flex items-center justify-between py-3 text-gray-text font-medium"
+            className="w-full flex items-center justify-between py-3 text-text-primary font-medium"
           >
             Find
-            <svg className={`w-4 h-4 transition-transform ${expandedSection === "find" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            <span className={`material-symbols-outlined text-lg transition-transform ${expandedSection === "find" ? "rotate-180" : ""}`}>
+              expand_more
+            </span>
           </button>
           {expandedSection === "find" && (
             <div className="pl-4 space-y-1">
               {findLinks.map((link) => (
-                <Link key={link.href} href={link.href} onClick={onClose} className="block py-2 text-sm text-gray-muted hover:text-amber-brand transition-colors">
+                <Link key={link.href} href={link.href} onClick={onClose} className="block py-2 text-sm text-text-secondary hover:text-primary transition-colors">
                   {link.label}
                 </Link>
               ))}
@@ -74,17 +72,17 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Categories Section */}
           <button
             onClick={() => toggleSection("categories")}
-            className="w-full flex items-center justify-between py-3 text-gray-text font-medium"
+            className="w-full flex items-center justify-between py-3 text-text-primary font-medium"
           >
             Categories
-            <svg className={`w-4 h-4 transition-transform ${expandedSection === "categories" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            <span className={`material-symbols-outlined text-lg transition-transform ${expandedSection === "categories" ? "rotate-180" : ""}`}>
+              expand_more
+            </span>
           </button>
           {expandedSection === "categories" && (
             <div className="pl-4 space-y-1">
               {categoryLinks.map((link) => (
-                <Link key={link.href} href={link.href} onClick={onClose} className="block py-2 text-sm text-gray-muted hover:text-amber-brand transition-colors">
+                <Link key={link.href} href={link.href} onClick={onClose} className="block py-2 text-sm text-text-secondary hover:text-primary transition-colors">
                   {link.label}
                 </Link>
               ))}
@@ -92,21 +90,21 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           )}
 
           {/* Direct Links */}
-          <Link href="/blog" onClick={onClose} className="block py-3 text-gray-text font-medium hover:text-amber-brand transition-colors">
+          <Link href="/blog" onClick={onClose} className="block py-3 text-text-primary font-medium hover:text-primary transition-colors">
             Blog
           </Link>
-          <Link href="/calendar" onClick={onClose} className="block py-3 text-gray-text font-medium hover:text-amber-brand transition-colors">
+          <Link href="/calendar" onClick={onClose} className="block py-3 text-text-primary font-medium hover:text-primary transition-colors">
             Calendar
           </Link>
-          <Link href="/about" onClick={onClose} className="block py-3 text-gray-text font-medium hover:text-amber-brand transition-colors">
+          <Link href="/about" onClick={onClose} className="block py-3 text-text-primary font-medium hover:text-primary transition-colors">
             About
           </Link>
 
-          <div className="pt-4 border-t border-gray-light space-y-2">
-            <Link href="/login" onClick={onClose} className="block w-full text-center py-2 text-sm text-gray-text border border-gray-light rounded-lg hover:border-amber-brand hover:text-amber-brand transition-colors">
+          <div className="pt-4 border-t border-border space-y-2">
+            <Link href="/login" onClick={onClose} className="block w-full text-center py-2 text-sm text-text-primary border border-border rounded-xl hover:border-primary hover:text-primary transition-colors">
               Log In
             </Link>
-            <Link href="/signup" onClick={onClose} className="block w-full text-center py-2 text-sm bg-amber-brand text-gray-dark font-semibold rounded-lg hover:bg-amber-light transition-colors">
+            <Link href="/signup" onClick={onClose} className="block w-full text-center py-2 text-sm bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-colors">
               Sign Up
             </Link>
           </div>

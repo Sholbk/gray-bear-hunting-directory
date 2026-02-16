@@ -11,8 +11,8 @@ export default function SuccessRateBadge({
     rate >= 85
       ? "text-green-400 bg-green-400/10 border-green-400/30"
       : rate >= 70
-      ? "text-amber-brand bg-amber-brand/10 border-amber-brand/30"
-      : "text-gray-text bg-gray-light/30 border-gray-light";
+      ? "text-accent bg-accent/10 border-accent/30"
+      : "text-text-primary bg-border/30 border-border";
 
   const sizeClasses = {
     sm: "text-xs px-2 py-0.5",

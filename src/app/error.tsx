@@ -7,15 +7,15 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="bg-gray-darker min-h-screen flex items-center justify-center px-4">
+    <div className="bg-bg-light min-h-screen flex items-center justify-center px-4">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-text mb-4">Something Went Wrong</h1>
-        <p className="text-gray-muted mb-8 max-w-md">
+        <h1 className="text-4xl font-bold text-text-primary mb-4">Something Went Wrong</h1>
+        <p className="text-text-muted mb-8 max-w-md">
           An unexpected error occurred. Please try again.
         </p>
         <button
           onClick={reset}
-          className="bg-amber-brand text-gray-dark px-6 py-3 rounded-lg font-semibold hover:bg-amber-light transition-colors"
+          className="bg-accent text-gray-dark px-6 py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
         >
           Try Again
         </button>

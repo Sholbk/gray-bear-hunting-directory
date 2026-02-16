@@ -9,8 +9,8 @@ export default function ListingGrid({ listings }: ListingGridProps) {
   if (listings.length === 0) {
     return (
       <div className="text-center py-16">
-        <p className="text-gray-muted text-lg mb-2">No listings found</p>
-        <p className="text-gray-muted text-sm">
+        <p className="text-text-muted text-lg mb-2">No listings found</p>
+        <p className="text-text-muted text-sm">
           Try adjusting your filters or search terms.
         </p>
       </div>

@@ -15,13 +15,13 @@ export default function DirectoryPage() {
   }
 
   return (
-    <div className="bg-gray-darker min-h-screen">
+    <div className="bg-bg-light min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-text mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
             Browse by Category
           </h1>
-          <p className="text-gray-muted max-w-2xl mx-auto">
+          <p className="text-text-muted max-w-2xl mx-auto">
             Explore our complete directory of hunting and fishing services across all categories.
           </p>
         </div>
@@ -33,20 +33,20 @@ export default function DirectoryPage() {
               <Link
                 key={cat.slug}
                 href={`/search?type=${cat.types[0]}`}
-                className="group bg-gray-dark rounded-xl p-6 border border-gray-light hover:border-amber-brand transition-all hover:shadow-lg hover:shadow-amber-brand/10"
+                className="group bg-bg-card rounded-xl p-6 border border-border hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/10"
               >
                 <div className="text-4xl mb-4">{cat.icon}</div>
-                <h2 className="text-xl font-bold text-gray-text mb-2 group-hover:text-amber-brand transition-colors">
+                <h2 className="text-xl font-bold text-text-primary mb-2 group-hover:text-accent transition-colors">
                   {cat.title}
                 </h2>
-                <p className="text-gray-muted text-sm mb-4 leading-relaxed">
+                <p className="text-text-muted text-sm mb-4 leading-relaxed">
                   {cat.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-amber-brand font-semibold text-sm">
+                  <span className="text-accent font-semibold text-sm">
                     {count} {count === 1 ? "listing" : "listings"}
                   </span>
-                  <span className="text-gray-muted group-hover:text-amber-brand transition-colors">
+                  <span className="text-text-muted group-hover:text-accent transition-colors">
                     &rarr;
                   </span>
                 </div>

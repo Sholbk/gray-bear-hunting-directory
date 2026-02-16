@@ -23,10 +23,10 @@ export default function RatingStars({
               key={star}
               className={
                 filled
-                  ? "text-amber-brand"
+                  ? "text-accent"
                   : partial
-                  ? "text-amber-brand opacity-50"
-                  : "text-gray-light"
+                  ? "text-accent opacity-50"
+                  : "text-border"
               }
             >
               ★
@@ -35,7 +35,7 @@ export default function RatingStars({
         })}
       </div>
       {showValue && (
-        <span className={`text-gray-muted ${textSize} ml-1`}>
+        <span className={`text-text-muted ${textSize} ml-1`}>
           {rating.toFixed(1)}
         </span>
       )}

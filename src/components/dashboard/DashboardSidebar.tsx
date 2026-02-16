@@ -15,7 +15,7 @@ export default function DashboardSidebar() {
 
   return (
     <aside className="w-64 shrink-0 hidden lg:block">
-      <nav className="bg-gray-dark rounded-xl border border-gray-light p-3 sticky top-24 space-y-1">
+      <nav className="bg-bg-card rounded-xl border border-border p-3 sticky top-24 space-y-1">
         {navItems.map((item) => {
           const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
           return (
@@ -24,8 +24,8 @@ export default function DashboardSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-amber-brand/10 text-amber-brand"
-                  : "text-gray-muted hover:text-gray-text hover:bg-gray-medium"
+                  ? "bg-accent/10 text-accent"
+                  : "text-text-muted hover:text-text-primary hover:bg-bg-input"
               }`}
             >
               <span>{item.icon}</span>

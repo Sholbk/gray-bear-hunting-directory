@@ -70,13 +70,13 @@ export default function FilterSidebar() {
     currentQuery !== "";
 
   return (
-    <div className="bg-gray-dark rounded-xl border border-gray-light p-5 space-y-6">
+    <div className="bg-bg-card rounded-2xl border border-border p-5 space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-white font-bold text-lg">Filters</h2>
+        <h2 className="text-text-primary font-bold text-lg">Filters</h2>
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-amber-brand text-xs hover:text-amber-light transition-colors"
+            className="text-accent text-xs hover:text-accent-light transition-colors"
           >
             Clear All
           </button>
@@ -85,7 +85,7 @@ export default function FilterSidebar() {
 
       {/* Search */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Search
         </label>
         <input
@@ -93,13 +93,13 @@ export default function FilterSidebar() {
           value={currentQuery}
           onChange={(e) => updateParams({ query: e.target.value || null })}
           placeholder="Name, species, location..."
-          className="w-full bg-gray-medium border border-gray-light text-white text-sm rounded-lg px-3 py-2 placeholder-gray-muted focus:outline-none focus:ring-2 focus:ring-amber-brand focus:border-transparent"
+          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
       </div>
 
       {/* Type */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Type
         </label>
         <div className="space-y-2">
@@ -124,9 +124,9 @@ export default function FilterSidebar() {
                 type="checkbox"
                 checked={currentTypes.includes(opt.value)}
                 onChange={() => handleTypeToggle(opt.value)}
-                className="rounded border-gray-light bg-gray-medium text-amber-brand focus:ring-amber-brand"
+                className="rounded border-border bg-bg-input text-primary focus:ring-primary"
               />
-              <span className="text-gray-text text-sm">{opt.label}</span>
+              <span className="text-text-secondary text-sm">{opt.label}</span>
             </label>
           ))}
         </div>
@@ -134,7 +134,7 @@ export default function FilterSidebar() {
 
       {/* Success Rate */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Min Success Rate: {currentSuccessMin}%
         </label>
         <input
@@ -150,7 +150,7 @@ export default function FilterSidebar() {
           }
           className="w-full"
         />
-        <div className="flex justify-between text-xs text-gray-muted mt-1">
+        <div className="flex justify-between text-xs text-text-muted mt-1">
           <span>0%</span>
           <span>100%</span>
         </div>
@@ -158,7 +158,7 @@ export default function FilterSidebar() {
 
       {/* Price Range */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Max Price: ${Number(currentPriceMax).toLocaleString()}
         </label>
         <input
@@ -174,7 +174,7 @@ export default function FilterSidebar() {
           }
           className="w-full"
         />
-        <div className="flex justify-between text-xs text-gray-muted mt-1">
+        <div className="flex justify-between text-xs text-text-muted mt-1">
           <span>$0</span>
           <span>$30,000</span>
         </div>
@@ -182,7 +182,7 @@ export default function FilterSidebar() {
 
       {/* Physical Intensity */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Physical Intensity
         </label>
         <div className="flex gap-2">
@@ -192,8 +192,8 @@ export default function FilterSidebar() {
               onClick={() => handleIntensityToggle(level)}
               className={`w-9 h-9 rounded-lg text-sm font-semibold transition-colors ${
                 currentIntensities.includes(level)
-                  ? "bg-amber-brand text-gray-dark"
-                  : "bg-gray-medium text-gray-muted border border-gray-light hover:border-amber-brand hover:text-amber-brand"
+                  ? "bg-accent text-white"
+                  : "bg-bg-input text-text-muted border border-border hover:border-primary hover:text-primary"
               }`}
             >
               {level}
@@ -204,7 +204,7 @@ export default function FilterSidebar() {
 
       {/* Minimum Rating */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Minimum Rating
         </label>
         <div className="flex gap-2">
@@ -218,11 +218,11 @@ export default function FilterSidebar() {
               }
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 currentRatingMin === rating
-                  ? "bg-amber-brand text-gray-dark"
-                  : "bg-gray-medium text-gray-muted border border-gray-light hover:border-amber-brand hover:text-amber-brand"
+                  ? "bg-accent text-white"
+                  : "bg-bg-input text-text-muted border border-border hover:border-primary hover:text-primary"
               }`}
             >
-              {rating}+★
+              {rating}+
             </button>
           ))}
         </div>
@@ -230,7 +230,7 @@ export default function FilterSidebar() {
 
       {/* State */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           State
         </label>
         <select
@@ -238,7 +238,7 @@ export default function FilterSidebar() {
           onChange={(e) =>
             updateParams({ state: e.target.value || null })
           }
-          className="w-full bg-gray-medium border border-gray-light text-gray-text text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-brand focus:border-transparent"
+          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
           <option value="">All States</option>
           {states.map((state) => (
@@ -251,7 +251,7 @@ export default function FilterSidebar() {
 
       {/* Species */}
       <div>
-        <label className="text-gray-text text-sm font-medium block mb-2">
+        <label className="text-text-primary text-sm font-medium block mb-2">
           Species / Game
         </label>
         <select
@@ -259,7 +259,7 @@ export default function FilterSidebar() {
           onChange={(e) =>
             updateParams({ species: e.target.value || null })
           }
-          className="w-full bg-gray-medium border border-gray-light text-gray-text text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-brand focus:border-transparent"
+          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
           <option value="">All Species</option>
           {species.map((s) => (

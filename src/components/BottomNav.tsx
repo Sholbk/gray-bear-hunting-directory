@@ -1,0 +1,51 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItems = [
+  { label: "Home", icon: "home", href: "/" },
+  { label: "Map", icon: "map", href: "/state" },
+  { label: "Add", icon: "add", href: "/dashboard/listings/new", isCenter: true },
+  { label: "Saved", icon: "bookmark", href: "/search" },
+  { label: "Profile", icon: "person", href: "/dashboard" },
+];
+
+export default function BottomNav() {
+  const pathname = usePathname();
+
+  return (
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-bg-card border-t border-border lg:hidden">
+      <div className="max-w-md mx-auto px-4 flex items-center justify-around h-16">
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+
+          if (item.isCenter) {
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="flex items-center justify-center w-14 h-14 -mt-5 rounded-full bg-accent text-white shadow-lg shadow-accent/30"
+              >
+                <span className="material-symbols-outlined text-3xl">{item.icon}</span>
+              </Link>
+            );
+          }
+
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`flex flex-col items-center gap-0.5 text-xs font-medium transition-colors ${
+                isActive ? "text-primary" : "text-text-muted"
+              }`}
+            >
+              <span className="material-symbols-outlined text-xl">{item.icon}</span>
+              {item.label}
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}

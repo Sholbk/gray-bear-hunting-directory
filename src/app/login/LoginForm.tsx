@@ -43,12 +43,12 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg p-3">
+        <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-xl p-3">
           {error}
         </div>
       )}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-text mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-1">
           Email
         </label>
         <input
@@ -57,11 +57,11 @@ export default function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+          className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary"
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-text mb-1">
+        <label htmlFor="password" className="block text-sm font-medium text-text-primary mb-1">
           Password
         </label>
         <input
@@ -70,19 +70,19 @@ export default function LoginForm() {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+          className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary"
         />
       </div>
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-amber-brand text-gray-dark py-3 rounded-lg font-semibold hover:bg-amber-light transition-colors disabled:opacity-50"
+        className="w-full bg-accent text-gray-dark py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors disabled:opacity-50"
       >
         {loading ? "Logging in..." : "Log In"}
       </button>
-      <p className="text-center text-gray-muted text-sm">
+      <p className="text-center text-text-muted text-sm">
         Don&apos;t have an account?{" "}
-        <Link href="/signup" className="text-amber-brand hover:text-amber-light">
+        <Link href="/signup" className="text-accent hover:text-accent-light">
           Sign Up
         </Link>
       </p>

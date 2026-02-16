@@ -59,16 +59,16 @@ export default function SearchContent() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-dark">
+          <h1 className="text-2xl sm:text-3xl font-bold text-text-primary">
             Browse Listings
           </h1>
-          <p className="text-gray-muted text-sm mt-1">
+          <p className="text-text-muted text-sm mt-1">
             {results.length} listing{results.length !== 1 ? "s" : ""} found
           </p>
         </div>
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="lg:hidden bg-gray-dark text-amber-brand px-4 py-2 rounded-lg text-sm font-medium border border-gray-light"
+          className="lg:hidden bg-bg-card text-accent px-4 py-2 rounded-xl text-sm font-medium border border-border"
         >
           {showFilters ? "Hide Filters" : "Show Filters"}
         </button>
@@ -88,11 +88,11 @@ export default function SearchContent() {
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-end mb-4">
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-muted">Sort by:</span>
+              <span className="text-sm text-text-muted">Sort by:</span>
               <select
                 value={sort}
                 onChange={(e) => handleSortChange(e.target.value)}
-                className="bg-gray-dark border border-gray-light text-gray-text text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-brand"
+                className="bg-bg-card border border-border text-text-primary text-sm rounded-xl px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="relevance">Relevance</option>
                 <option value="price-low">Price: Low to High</option>

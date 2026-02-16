@@ -18,10 +18,10 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-gray-dark rounded-xl p-8 border border-gray-light text-center">
+      <div className="bg-bg-card rounded-xl p-8 border border-border text-center">
         <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-gray-text mb-2">Message Sent!</h3>
-        <p className="text-gray-muted">
+        <h3 className="text-xl font-bold text-text-primary mb-2">Message Sent!</h3>
+        <p className="text-text-muted">
           Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
       </div>
@@ -32,7 +32,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-text mb-1">
+          <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-1">
             Name
           </label>
           <input
@@ -41,11 +41,11 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-text mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-1">
             Email
           </label>
           <input
@@ -54,12 +54,12 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-text mb-1">
+        <label htmlFor="subject" className="block text-sm font-medium text-text-primary mb-1">
           Subject
         </label>
         <input
@@ -68,11 +68,11 @@ export default function ContactForm() {
           required
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-          className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+          className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-accent"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-text mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-1">
           Message
         </label>
         <textarea
@@ -81,12 +81,12 @@ export default function ContactForm() {
           required
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand resize-none"
+          className="w-full px-3 py-2 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-accent resize-none"
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-amber-brand text-gray-dark py-3 rounded-lg font-semibold hover:bg-amber-light transition-colors"
+        className="w-full bg-accent text-gray-dark py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
       >
         Send Message
       </button>
