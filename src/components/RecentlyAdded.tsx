@@ -46,12 +46,16 @@ export default function RecentlyAdded() {
                   {listing.location.city}, {listing.location.state}
                 </div>
                 <div className="flex items-center gap-2 mt-1">
-                  <div className="flex items-center gap-0.5">
-                    <Icon name="star" className="w-3 h-3 text-star" />
-                    <span className="text-xs font-medium text-text-primary">
-                      {listing.rating.toFixed(1)}
-                    </span>
-                  </div>
+                  {listing.rating > 0 ? (
+                    <div className="flex items-center gap-0.5">
+                      <Icon name="star" className="w-3 h-3 text-star" />
+                      <span className="text-xs font-medium text-text-primary">
+                        {listing.rating.toFixed(1)}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-xs text-text-muted">New</span>
+                  )}
                   <span className="text-xs text-text-muted">
                     {listing.species.slice(0, 2).join(", ")}
                   </span>
@@ -59,10 +63,16 @@ export default function RecentlyAdded() {
               </div>
 
               <div className="text-right flex-shrink-0">
-                <p className="text-accent font-bold text-sm">
-                  ${listing.priceRange.min.toLocaleString()}
-                </p>
-                <p className="text-text-muted text-xs">per person</p>
+                {listing.priceRange.min > 0 ? (
+                  <>
+                    <p className="text-accent font-bold text-sm">
+                      ${listing.priceRange.min.toLocaleString()}
+                    </p>
+                    <p className="text-text-muted text-xs">per person</p>
+                  </>
+                ) : (
+                  <p className="text-text-muted text-xs">Contact for pricing</p>
+                )}
               </div>
             </Link>
           ))}

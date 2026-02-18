@@ -3,7 +3,7 @@ import BearLogo from "./BearLogo";
 
 export default function Footer() {
   return (
-    <footer className="hidden lg:block bg-primary text-text-inverse mt-auto">
+    <footer className="bg-primary text-text-inverse mt-auto pb-20 lg:pb-0">
       <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}

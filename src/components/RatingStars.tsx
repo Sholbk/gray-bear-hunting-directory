@@ -12,6 +12,14 @@ export default function RatingStars({
   const starSize = { sm: "text-sm", md: "text-lg", lg: "text-2xl" }[size];
   const textSize = { sm: "text-xs", md: "text-sm", lg: "text-base" }[size];
 
+  if (!rating) {
+    return (
+      <div className="flex items-center gap-1">
+        <span className={`text-text-muted ${textSize}`}>New listing</span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-1">
       <div className={`flex ${starSize}`}>

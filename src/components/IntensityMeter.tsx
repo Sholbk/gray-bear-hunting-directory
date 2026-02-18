@@ -3,12 +3,20 @@ interface IntensityMeterProps {
   showLabel?: boolean;
 }
 
-const labels = ["", "Easy", "Moderate", "Challenging", "Strenuous", "Extreme"];
+const labels = ["N/A", "Easy", "Moderate", "Challenging", "Strenuous", "Extreme"];
 
 export default function IntensityMeter({
   level,
   showLabel = true,
 }: IntensityMeterProps) {
+  if (!level) {
+    return (
+      <div className="flex items-center gap-2">
+        <span className="text-xs text-text-muted">N/A</span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-2">
       <div className="flex gap-0.5">

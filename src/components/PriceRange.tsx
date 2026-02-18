@@ -15,6 +15,14 @@ function formatPrice(price: number): string {
 export default function PriceRange({ min, max, size = "md" }: PriceRangeProps) {
   const textSize = { sm: "text-xs", md: "text-sm", lg: "text-lg" }[size];
 
+  if (!min && !max) {
+    return (
+      <span className={`text-text-muted ${textSize}`}>
+        Contact for pricing
+      </span>
+    );
+  }
+
   return (
     <span className={`font-semibold text-text-primary ${textSize}`}>
       {formatPrice(min)} – {formatPrice(max)}

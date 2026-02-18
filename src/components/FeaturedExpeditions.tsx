@@ -45,15 +45,21 @@ export default function FeaturedExpeditions() {
               </div>
 
               <div className="p-4">
-                <div className="flex items-center gap-1 mb-1">
-                  <Icon name="star" className="w-3.5 h-3.5 text-star" />
-                  <span className="text-sm font-semibold text-text-primary">
-                    {listing.rating.toFixed(1)}
-                  </span>
-                  <span className="text-xs text-text-muted">
-                    ({listing.reviewCount})
-                  </span>
-                </div>
+                {listing.rating > 0 ? (
+                  <div className="flex items-center gap-1 mb-1">
+                    <Icon name="star" className="w-3.5 h-3.5 text-star" />
+                    <span className="text-sm font-semibold text-text-primary">
+                      {listing.rating.toFixed(1)}
+                    </span>
+                    <span className="text-xs text-text-muted">
+                      ({listing.reviewCount})
+                    </span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="text-xs text-text-muted">New listing</span>
+                  </div>
+                )}
                 <h3 className="font-semibold text-text-primary text-sm mb-1 line-clamp-1">
                   {listing.name}
                 </h3>
@@ -62,15 +68,21 @@ export default function FeaturedExpeditions() {
                   {listing.location.city}, {listing.location.state}
                 </div>
                 <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-accent font-bold text-sm">
-                      ${listing.priceRange.min.toLocaleString()}
+                  {listing.priceRange.min > 0 ? (
+                    <div>
+                      <span className="text-accent font-bold text-sm">
+                        ${listing.priceRange.min.toLocaleString()}
+                      </span>
+                      <span className="text-text-muted text-xs"> / person</span>
+                    </div>
+                  ) : (
+                    <span className="text-text-muted text-xs">Contact for pricing</span>
+                  )}
+                  {listing.successRate > 0 && (
+                    <span className="text-xs text-text-muted bg-bg-input px-2 py-0.5 rounded-full">
+                      {listing.successRate}% success
                     </span>
-                    <span className="text-text-muted text-xs"> / person</span>
-                  </div>
-                  <span className="text-xs text-text-muted bg-bg-input px-2 py-0.5 rounded-full">
-                    {listing.successRate}% success
-                  </span>
+                  )}
                 </div>
               </div>
             </Link>

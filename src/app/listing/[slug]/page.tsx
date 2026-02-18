@@ -149,9 +149,15 @@ export default async function ListingDetailPage({
             {/* Description */}
             <section className="mb-10">
               <h2 className="text-xl font-bold text-text-primary mb-4">About</h2>
-              <p className="text-text-secondary leading-relaxed text-base">
-                {listing.description}
-              </p>
+              {listing.description ? (
+                <p className="text-text-secondary leading-relaxed text-base">
+                  {listing.description}
+                </p>
+              ) : (
+                <p className="text-text-muted italic">
+                  No description available yet. Contact the business directly for more information.
+                </p>
+              )}
             </section>
 
             {/* Species Tags */}
@@ -192,31 +198,35 @@ export default async function ListingDetailPage({
                 Contact Information
               </h3>
               <div className="space-y-4">
-                <div>
-                  <p className="text-text-muted text-xs uppercase tracking-wider mb-1">
-                    Phone
-                  </p>
-                  <a
-                    href={`tel:${listing.phone}`}
-                    className="text-accent font-semibold hover:text-accent-light transition-colors"
-                  >
-                    {listing.phone}
-                  </a>
-                </div>
-                <div>
-                  <p className="text-text-muted text-xs uppercase tracking-wider mb-1">
-                    Website
-                  </p>
-                  <a
-                    href={listing.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent font-semibold hover:text-accent-light transition-colors text-sm break-all"
-                  >
-                    Visit Website
-                    <Icon name="open_in_new" className="w-3.5 h-3.5 ml-1 inline align-middle" />
-                  </a>
-                </div>
+                {listing.phone && (
+                  <div>
+                    <p className="text-text-muted text-xs uppercase tracking-wider mb-1">
+                      Phone
+                    </p>
+                    <a
+                      href={`tel:${listing.phone}`}
+                      className="text-accent font-semibold hover:text-accent-light transition-colors"
+                    >
+                      {listing.phone}
+                    </a>
+                  </div>
+                )}
+                {listing.website && (
+                  <div>
+                    <p className="text-text-muted text-xs uppercase tracking-wider mb-1">
+                      Website
+                    </p>
+                    <a
+                      href={listing.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent font-semibold hover:text-accent-light transition-colors text-sm break-all"
+                    >
+                      Visit Website
+                      <Icon name="open_in_new" className="w-3.5 h-3.5 ml-1 inline align-middle" />
+                    </a>
+                  </div>
+                )}
                 <div>
                   <p className="text-text-muted text-xs uppercase tracking-wider mb-1">
                     Location
@@ -226,14 +236,16 @@ export default async function ListingDetailPage({
                   </p>
                 </div>
               </div>
-              <div className="mt-6 pt-6 border-t border-border">
-                <a
-                  href={`tel:${listing.phone}`}
-                  className="block w-full bg-accent hover:bg-accent-dark text-white font-bold text-center py-3 rounded-xl transition-colors"
-                >
-                  Call Now
-                </a>
-              </div>
+              {listing.phone && (
+                <div className="mt-6 pt-6 border-t border-border">
+                  <a
+                    href={`tel:${listing.phone}`}
+                    className="block w-full bg-accent hover:bg-accent-dark text-white font-bold text-center py-3 rounded-xl transition-colors"
+                  >
+                    Call Now
+                  </a>
+                </div>
+              )}
             </div>
           </aside>
         </div>
