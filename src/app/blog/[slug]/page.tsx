@@ -3,7 +3,7 @@ import Link from "next/link";
 const placeholderSlugs = [
   "top-elk-hunting-tips",
   "choosing-fishing-charter",
-  "gear-review-2025",
+  "gear-review-2026",
   "whitetail-season-prep",
   "conservation-matters",
   "fly-fishing-basics",
@@ -23,7 +23,7 @@ export function generateMetadata() {
 const samplePost = {
   title: "Top 10 Elk Hunting Tips for Beginners",
   author: "Gray Bear Team",
-  date: "December 15, 2025",
+  date: "February 15, 2026",
   tags: ["Hunting Tips", "Elk"],
   content: `
 ## Planning Your First Elk Hunt
