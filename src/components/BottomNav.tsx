@@ -8,7 +8,7 @@ const navItems = [
   { label: "Home", icon: "home", href: "/" },
   { label: "Map", icon: "map", href: "/state" },
   { label: "Add", icon: "add", href: "/dashboard/listings/new", isCenter: true },
-  { label: "Saved", icon: "bookmark", href: "/search" },
+  { label: "Search", icon: "search", href: "/search" },
   { label: "Profile", icon: "person", href: "/dashboard" },
 ];
 

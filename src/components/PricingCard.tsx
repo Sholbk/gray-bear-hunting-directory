@@ -40,7 +40,7 @@ export default function PricingCard({ plan }: PricingCardProps) {
         ))}
       </ul>
       <Link
-        href="/signup"
+        href={`/signup?plan=${plan.tier}`}
         className={`block text-center py-3 rounded-xl font-semibold transition-colors ${
           plan.highlighted
             ? "bg-accent text-gray-dark hover:bg-accent-light"
