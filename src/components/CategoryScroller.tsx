@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const scrollCategories = [
   { label: "All", icon: "grid_view", href: "/search", active: true },
-  { label: "Big Game", icon: "terrain", href: "/search?type=guide" },
-  { label: "Waterfowl", icon: "water", href: "/search?type=charter" },
-  { label: "Archery", icon: "sports_martial_arts", href: "/search?species=Elk" },
+  { label: "Big Game", icon: "terrain", href: "/hunt" },
+  { label: "Waterfowl", icon: "water", href: "/search?species=Duck" },
+  { label: "Archery", icon: "sports_martial_arts", href: "/search?query=archery" },
   { label: "Upland", icon: "forest", href: "/search?species=Pheasant" },
   { label: "Turkey", icon: "park", href: "/search?species=Turkey" },
   { label: "Fishing", icon: "phishing", href: "/fish" },
