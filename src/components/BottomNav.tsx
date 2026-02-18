@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Icon from "@/components/Icon";
 
 const navItems = [
   { label: "Home", icon: "home", href: "/" },
@@ -27,7 +28,7 @@ export default function BottomNav() {
                 href={item.href}
                 className="flex items-center justify-center w-14 h-14 -mt-5 rounded-full bg-accent text-white shadow-lg shadow-accent/30"
               >
-                <span className="material-symbols-outlined text-3xl">{item.icon}</span>
+                <Icon name={item.icon} className="w-[30px] h-[30px]" />
               </Link>
             );
           }
@@ -40,7 +41,7 @@ export default function BottomNav() {
                 isActive ? "text-primary" : "text-text-muted"
               }`}
             >
-              <span className="material-symbols-outlined text-xl">{item.icon}</span>
+              <Icon name={item.icon} className="w-5 h-5" />
               {item.label}
             </Link>
           );

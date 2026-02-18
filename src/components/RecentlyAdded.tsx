@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllListings } from "@/lib/listings";
+import Icon from "@/components/Icon";
 
 export default function RecentlyAdded() {
   // Get non-featured listings as "recently added"
@@ -25,17 +26,7 @@ export default function RecentlyAdded() {
             >
               {/* Thumbnail placeholder */}
               <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0">
-                <span className="material-symbols-outlined text-2xl text-primary/40">
-                  {listing.type === "guide"
-                    ? "hiking"
-                    : listing.type === "charter"
-                    ? "sailing"
-                    : listing.type === "outfitter"
-                    ? "camping"
-                    : listing.type === "lodge"
-                    ? "cabin"
-                    : "location_on"}
-                </span>
+                <Icon name={listing.type === "guide" ? "hiking" : listing.type === "charter" ? "sailing" : listing.type === "outfitter" ? "camping" : listing.type === "lodge" ? "cabin" : "location_on"} className="w-6 h-6 text-primary/40" />
               </div>
 
               <div className="flex-1 min-w-0">
@@ -43,12 +34,12 @@ export default function RecentlyAdded() {
                   {listing.name}
                 </h3>
                 <div className="flex items-center gap-1 text-text-muted text-xs mt-0.5">
-                  <span className="material-symbols-outlined text-xs">location_on</span>
+                  <Icon name="location_on" className="w-3 h-3" />
                   {listing.location.city}, {listing.location.state}
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <div className="flex items-center gap-0.5">
-                    <span className="material-symbols-outlined text-star text-xs">star</span>
+                    <Icon name="star" className="w-3 h-3 text-star" />
                     <span className="text-xs font-medium text-text-primary">
                       {listing.rating.toFixed(1)}
                     </span>

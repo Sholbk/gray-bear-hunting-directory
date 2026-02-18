@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Icon from "@/components/Icon";
 
 const scrollCategories = [
   { label: "All", icon: "grid_view", href: "/search", active: true },
@@ -31,7 +32,7 @@ export default function CategoryScroller() {
                   : "bg-bg-input text-text-muted hover:bg-border"
               }`}
             >
-              <span className="material-symbols-outlined text-2xl">{cat.icon}</span>
+              <Icon name={cat.icon} className="w-6 h-6" />
             </div>
             <span className="text-xs font-medium whitespace-nowrap">{cat.label}</span>
           </Link>

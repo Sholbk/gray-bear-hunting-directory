@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllListings, getListingBySlug } from "@/lib/listings";
+import Icon from "@/components/Icon";
 import RatingStars from "@/components/RatingStars";
 import SuccessRateBadge from "@/components/SuccessRateBadge";
 import IntensityMeter from "@/components/IntensityMeter";
@@ -61,16 +62,14 @@ export default async function ListingDetailPage({
       {/* Hero Section */}
       <div className="bg-primary relative">
         <div className="absolute inset-0 flex items-center justify-center opacity-10">
-          <span className="material-symbols-outlined text-[200px] text-white">
-            {listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"}
-          </span>
+          <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-[200px] h-[200px] text-white" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <Link
             href="/search"
             className="inline-flex items-center text-white/60 hover:text-white transition-colors text-sm mb-6"
           >
-            <span className="material-symbols-outlined text-sm mr-1">arrow_back</span>
+            <Icon name="arrow_back" className="w-3.5 h-3.5 mr-1" />
             Back to listings
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -87,7 +86,7 @@ export default async function ListingDetailPage({
             {listing.name}
           </h1>
           <div className="flex items-center gap-1 text-white/80 text-lg">
-            <span className="material-symbols-outlined text-lg">location_on</span>
+            <Icon name="location_on" className="w-[18px] h-[18px]" />
             {listing.location.city}, {listing.location.state}
           </div>
         </div>
@@ -207,7 +206,7 @@ export default async function ListingDetailPage({
                     className="text-accent font-semibold hover:text-accent-light transition-colors text-sm break-all"
                   >
                     Visit Website
-                    <span className="material-symbols-outlined text-sm ml-1 align-middle">open_in_new</span>
+                    <Icon name="open_in_new" className="w-3.5 h-3.5 ml-1 inline align-middle" />
                   </a>
                 </div>
                 <div>

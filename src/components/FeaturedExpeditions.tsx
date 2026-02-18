@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getFeaturedListings } from "@/lib/listings";
+import Icon from "@/components/Icon";
 
 export default function FeaturedExpeditions() {
   const featured = getFeaturedListings();
@@ -25,15 +26,7 @@ export default function FeaturedExpeditions() {
             >
               {/* Image placeholder */}
               <div className="relative h-40 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <span className="material-symbols-outlined text-5xl text-primary/30">
-                  {listing.type === "guide"
-                    ? "hiking"
-                    : listing.type === "charter"
-                    ? "sailing"
-                    : listing.type === "outfitter"
-                    ? "camping"
-                    : "location_on"}
-                </span>
+                <Icon name={listing.type === "guide" ? "hiking" : listing.type === "charter" ? "sailing" : listing.type === "outfitter" ? "camping" : "location_on"} className="w-12 h-12 text-primary/30" />
                 <div className="absolute top-3 left-3">
                   <span className="bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full capitalize">
                     {listing.type}
@@ -43,7 +36,7 @@ export default function FeaturedExpeditions() {
 
               <div className="p-4">
                 <div className="flex items-center gap-1 mb-1">
-                  <span className="material-symbols-outlined text-star text-sm">star</span>
+                  <Icon name="star" className="w-3.5 h-3.5 text-star" />
                   <span className="text-sm font-semibold text-text-primary">
                     {listing.rating.toFixed(1)}
                   </span>
@@ -55,7 +48,7 @@ export default function FeaturedExpeditions() {
                   {listing.name}
                 </h3>
                 <div className="flex items-center gap-1 text-text-muted text-xs mb-2">
-                  <span className="material-symbols-outlined text-sm">location_on</span>
+                  <Icon name="location_on" className="w-3.5 h-3.5" />
                   {listing.location.city}, {listing.location.state}
                 </div>
                 <div className="flex items-center justify-between">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Icon from "@/components/Icon";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -44,7 +45,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <div className="flex items-center justify-between p-4 border-b border-border">
           <span className="text-primary font-bold text-lg">Menu</span>
           <button onClick={onClose} className="p-2 text-text-muted hover:text-text-primary">
-            <span className="material-symbols-outlined">close</span>
+            <Icon name="close" className="w-6 h-6" />
           </button>
         </div>
 
@@ -55,9 +56,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="w-full flex items-center justify-between py-3 text-text-primary font-medium"
           >
             Find
-            <span className={`material-symbols-outlined text-lg transition-transform ${expandedSection === "find" ? "rotate-180" : ""}`}>
-              expand_more
-            </span>
+            <Icon name="expand_more" className={`w-[18px] h-[18px] transition-transform ${expandedSection === "find" ? "rotate-180" : ""}`} />
           </button>
           {expandedSection === "find" && (
             <div className="pl-4 space-y-1">
@@ -75,9 +74,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="w-full flex items-center justify-between py-3 text-text-primary font-medium"
           >
             Categories
-            <span className={`material-symbols-outlined text-lg transition-transform ${expandedSection === "categories" ? "rotate-180" : ""}`}>
-              expand_more
-            </span>
+            <Icon name="expand_more" className={`w-[18px] h-[18px] transition-transform ${expandedSection === "categories" ? "rotate-180" : ""}`} />
           </button>
           {expandedSection === "categories" && (
             <div className="pl-4 space-y-1">

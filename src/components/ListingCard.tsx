@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Listing } from "@/types";
+import Icon from "@/components/Icon";
 import RatingStars from "./RatingStars";
 import SuccessRateBadge from "./SuccessRateBadge";
 import IntensityMeter from "./IntensityMeter";
@@ -33,9 +34,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
     >
       <div className="relative h-48 bg-gradient-to-br from-primary/15 to-primary/5">
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="material-symbols-outlined text-5xl text-primary/20">
-            {listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"}
-          </span>
+          <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-12 h-12 text-primary/20" />
         </div>
         <div className="absolute top-3 left-3">
           <span className="bg-primary/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import Icon from "@/components/Icon";
 
 interface NavDropdownItem {
   label: string;
@@ -34,9 +35,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
         className="flex items-center gap-1 text-text-inverse/80 hover:text-white transition-colors text-sm font-medium"
       >
         {label}
-        <span className={`material-symbols-outlined text-lg transition-transform ${open ? "rotate-180" : ""}`}>
-          expand_more
-        </span>
+        <Icon name="expand_more" className={`w-[18px] h-[18px] transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <div className="absolute top-full left-0 mt-2 w-48 bg-bg-card border border-border rounded-xl shadow-xl py-2 z-50">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Icon from "@/components/Icon";
 
 export default function HomeSearch() {
   const router = useRouter();
@@ -29,9 +30,7 @@ export default function HomeSearch() {
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <div className="relative">
-          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">
-            search
-          </span>
+          <Icon name="search" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
           <input
             type="text"
             value={query}
@@ -43,9 +42,7 @@ export default function HomeSearch() {
 
         <div className="flex gap-3">
           <div className="relative flex-1">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-lg">
-              location_on
-            </span>
+            <Icon name="location_on" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
             <select
               value={region}
               onChange={(e) => setRegion(e.target.value)}
@@ -71,9 +68,7 @@ export default function HomeSearch() {
             </select>
           </div>
           <div className="relative flex-1">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-lg">
-              pets
-            </span>
+            <Icon name="pets" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
             <select
               value={species}
               onChange={(e) => setSpecies(e.target.value)}
@@ -98,7 +93,7 @@ export default function HomeSearch() {
           type="submit"
           className="w-full bg-accent hover:bg-accent-light text-white py-3.5 rounded-xl font-semibold text-sm transition-colors flex items-center justify-center gap-2"
         >
-          <span className="material-symbols-outlined text-lg">search</span>
+          <Icon name="search" className="w-[18px] h-[18px]" />
           Search Expeditions
         </button>
       </form>

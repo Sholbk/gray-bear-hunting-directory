@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Icon from "@/components/Icon";
 
 interface SearchBarProps {
   defaultValue?: string;
@@ -29,9 +30,7 @@ export default function SearchBar({
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className="relative">
-        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">
-          search
-        </span>
+        <Icon name="search" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
         <input
           type="text"
           value={query}
