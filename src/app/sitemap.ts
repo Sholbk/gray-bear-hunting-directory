@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllListings } from "@/lib/listings";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://gray-bear-hunting-directory.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gbh-repo.vercel.app";
 
   const staticPages = [
     "",
