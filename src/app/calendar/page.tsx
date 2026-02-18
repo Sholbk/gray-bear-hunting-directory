@@ -22,6 +22,9 @@ const events = [
 ];
 
 export default function CalendarPage() {
+  const today = new Date().toISOString().split("T")[0];
+  const upcoming = events.filter((e) => e.date >= today);
+
   return (
     <div className="bg-bg-light min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -44,7 +47,7 @@ export default function CalendarPage() {
           <div>
             <h2 className="text-lg font-bold text-text-primary mb-4">Upcoming Events</h2>
             <div className="space-y-3">
-              {events.slice(0, 8).map((event, i) => (
+              {upcoming.slice(0, 8).map((event, i) => (
                 <EventCard key={i} {...event} />
               ))}
             </div>

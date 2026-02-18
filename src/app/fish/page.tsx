@@ -18,7 +18,7 @@ export default function FishPage() {
             Fishing Species
           </h1>
           <p className="text-text-muted max-w-2xl mx-auto">
-            Find fishing charters and guides for your target species, from freshwater to deep sea.
+            Find fishing guides and charters for your target species, from freshwater to deep sea.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function FishPage() {
                 {speciesInSub.map((sp) => (
                   <Link
                     key={sp.slug}
-                    href={`/search?species=${sp.name}&type=charter`}
+                    href={`/search?species=${sp.name}`}
                     className="bg-bg-card rounded-xl p-4 border border-border hover:border-accent transition-all text-center group"
                   >
                     <span className="text-sm font-medium text-text-primary group-hover:text-accent transition-colors">

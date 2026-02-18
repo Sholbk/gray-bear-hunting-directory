@@ -13,17 +13,35 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:contact@graybearhunting.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
       <div className="bg-bg-card rounded-xl p-8 border border-border text-center">
-        <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-text-primary mb-2">Message Sent!</h3>
+        <div className="text-4xl mb-4">&#10003;</div>
+        <h3 className="text-xl font-bold text-text-primary mb-2">Opening Email Client</h3>
         <p className="text-text-muted">
-          Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+          Your default email app should open with the message pre-filled. If it
+          didn&apos;t open, you can email us directly at{" "}
+          <a
+            href="mailto:contact@graybearhunting.com"
+            className="text-accent hover:text-accent-light"
+          >
+            contact@graybearhunting.com
+          </a>
         </p>
+        <button
+          onClick={() => setSubmitted(false)}
+          className="mt-4 text-accent text-sm hover:text-accent-light transition-colors"
+        >
+          Send another message
+        </button>
       </div>
     );
   }

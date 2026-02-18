@@ -23,6 +23,13 @@ export const categories: Category[] = [
     types: ["charter"],
   },
   {
+    slug: "lodges",
+    title: "Hunting Lodges",
+    description: "Hunting lodges and ranches with accommodations for guided and self-guided hunts.",
+    icon: "🏠",
+    types: ["lodge"],
+  },
+  {
     slug: "boats-vehicles",
     title: "Boats & Vehicles",
     description: "Boat dealers, ATV rentals, and vehicle outfitting for the outdoors.",
@@ -61,7 +68,7 @@ export const categories: Category[] = [
     slug: "shooting-ranges",
     title: "Shooting Ranges",
     description: "Indoor and outdoor ranges for rifle, shotgun, pistol, and archery.",
-    icon: "🎯",
+    icon: "🔫",
     types: ["shooting-range"],
   },
   {

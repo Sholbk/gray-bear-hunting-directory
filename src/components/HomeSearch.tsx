@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Icon from "@/components/Icon";
+import { states } from "@/data/states";
 
 export default function HomeSearch() {
   const router = useRouter();
@@ -48,23 +49,12 @@ export default function HomeSearch() {
               onChange={(e) => setRegion(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none"
             >
-              <option value="">Region</option>
-              <option value="Colorado">Colorado</option>
-              <option value="Montana">Montana</option>
-              <option value="Wisconsin">Wisconsin</option>
-              <option value="Missouri">Missouri</option>
-              <option value="Alaska">Alaska</option>
-              <option value="Texas">Texas</option>
-              <option value="Oregon">Oregon</option>
-              <option value="Michigan">Michigan</option>
-              <option value="Wyoming">Wyoming</option>
-              <option value="South Carolina">South Carolina</option>
-              <option value="Pennsylvania">Pennsylvania</option>
-              <option value="Florida">Florida</option>
-              <option value="Louisiana">Louisiana</option>
-              <option value="New York">New York</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Maine">Maine</option>
+              <option value="">All States</option>
+              {states.map((s) => (
+                <option key={s.abbreviation} value={s.name}>
+                  {s.name}
+                </option>
+              ))}
             </select>
           </div>
           <div className="relative flex-1">
