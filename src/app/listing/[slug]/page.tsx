@@ -61,9 +61,17 @@ export default async function ListingDetailPage({
     <div className="bg-bg-light">
       {/* Hero Section */}
       <div className="bg-primary relative">
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
-          <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-[200px] h-[200px] text-white" />
-        </div>
+        {listing.image ? (
+          <img
+            src={listing.image}
+            alt={listing.name}
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center opacity-10">
+            <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-[200px] h-[200px] text-white" />
+          </div>
+        )}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <Link
             href="/search"

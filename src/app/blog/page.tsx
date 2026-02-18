@@ -65,8 +65,9 @@ export default function BlogPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {placeholderPosts.map((post) => (
-            <article
+            <Link
               key={post.slug}
+              href={`/blog/${post.slug}`}
               className="bg-bg-card rounded-xl border border-border overflow-hidden hover:border-accent transition-all group"
             >
               <div className="h-48 bg-bg-input flex items-center justify-center">
@@ -89,7 +90,7 @@ export default function BlogPage() {
                   Read More &rarr;
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

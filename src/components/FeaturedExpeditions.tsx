@@ -24,9 +24,19 @@ export default function FeaturedExpeditions() {
               href={`/listing/${listing.slug}`}
               className="min-w-[260px] max-w-[260px] bg-bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow flex-shrink-0"
             >
-              {/* Image placeholder */}
-              <div className="relative h-40 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <Icon name={listing.type === "guide" ? "hiking" : listing.type === "charter" ? "sailing" : listing.type === "outfitter" ? "camping" : "location_on"} className="w-12 h-12 text-primary/30" />
+              <div className="relative h-40 bg-gradient-to-br from-primary/20 to-primary/5">
+                {listing.image ? (
+                  <img
+                    src={listing.image}
+                    alt={listing.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Icon name={listing.type === "guide" ? "hiking" : listing.type === "charter" ? "sailing" : listing.type === "outfitter" ? "camping" : "location_on"} className="w-12 h-12 text-primary/30" />
+                  </div>
+                )}
                 <div className="absolute top-3 left-3">
                   <span className="bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full capitalize">
                     {listing.type}

@@ -13,7 +13,19 @@ export function getListingBySlug(slug: string): Listing | undefined {
 }
 
 export function getFeaturedListings(): Listing[] {
-  return listings.filter((l) => l.featured);
+  const featured = listings.filter((l) => l.featured);
+  if (featured.length > 0) return featured;
+  // When no listings are explicitly featured, pick well-populated ones
+  return listings
+    .filter(
+      (l) =>
+        l.description &&
+        l.species.length > 0 &&
+        l.location.city &&
+        l.location.state &&
+        l.image
+    )
+    .slice(0, 8);
 }
 
 export function getListingsByType(type: string): Listing[] {

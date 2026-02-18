@@ -43,9 +43,12 @@ export default function Header() {
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <button className="relative p-2" aria-label="Notifications">
-              <Icon name="notifications" className="w-5 h-5" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full"></span>
+            <button
+              className="p-2"
+              aria-label="Open menu"
+              onClick={() => setMobileOpen(true)}
+            >
+              <Icon name="menu" className="w-5 h-5" />
             </button>
           </div>
         </div>
