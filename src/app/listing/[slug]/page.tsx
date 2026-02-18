@@ -7,11 +7,15 @@ import IntensityMeter from "@/components/IntensityMeter";
 import PriceRange from "@/components/PriceRange";
 import ReviewCard from "@/components/ReviewCard";
 
+// Generate a small subset at build time; the rest render on-demand
 export function generateStaticParams() {
-  return getAllListings().map((listing) => ({
-    slug: listing.slug,
-  }));
+  return getAllListings()
+    .filter((l) => l.featured)
+    .map((listing) => ({ slug: listing.slug }));
 }
+
+// Allow pages not in generateStaticParams to render on-demand
+export const dynamicParams = true;
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   return params.then(({ slug }) => {
