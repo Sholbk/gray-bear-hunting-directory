@@ -1,5 +1,18 @@
 import Link from "next/link";
 
+const placeholderSlugs = [
+  "top-elk-hunting-tips",
+  "choosing-fishing-charter",
+  "gear-review-2025",
+  "whitetail-season-prep",
+  "conservation-matters",
+  "fly-fishing-basics",
+];
+
+export function generateStaticParams() {
+  return placeholderSlugs.map((slug) => ({ slug }));
+}
+
 export function generateMetadata() {
   return {
     title: "Blog Post | Gray Bear Hunting Directory",
