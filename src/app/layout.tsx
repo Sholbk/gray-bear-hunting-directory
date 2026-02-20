@@ -22,6 +22,27 @@ export const metadata: Metadata = {
   title: "Gray Bear Hunting Directory",
   description:
     "The Trusted Directory for Hunting & Fishing Resources. Find verified guides, outfitters, and charters filtered by success rates, price, physical intensity, and honest reviews.",
+  openGraph: {
+    title: "Gray Bear Hunting Directory",
+    description:
+      "The Trusted Directory for Hunting & Fishing Resources. Find verified guides, outfitters, and charters filtered by success rates, price, physical intensity, and honest reviews.",
+    images: [
+      {
+        url: "/images/og-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gray Bear Hunting Directory",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gray Bear Hunting Directory",
+    description:
+      "The Trusted Directory for Hunting & Fishing Resources. Find verified guides, outfitters, and charters filtered by success rates, price, physical intensity, and honest reviews.",
+    images: ["/images/og-logo.png"],
+  },
 };
 
 export default function RootLayout({
