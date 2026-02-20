@@ -72,13 +72,13 @@ export default function WhyGrayBearPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/search"
-              className="bg-accent text-gray-dark px-6 py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
+              className="bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
             >
               Browse Listings
             </Link>
             <Link
               href="/signup"
-              className="border border-accent text-accent px-6 py-3 rounded-xl font-semibold hover:bg-accent hover:text-gray-dark transition-colors"
+              className="border border-accent text-accent px-6 py-3 rounded-xl font-semibold hover:bg-accent hover:text-white transition-colors"
             >
               List Your Business
             </Link>

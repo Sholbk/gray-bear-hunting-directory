@@ -74,7 +74,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/search"
-              className="inline-block bg-accent text-gray-dark px-6 py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
+              className="inline-block bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
             >
               Browse Listings
             </Link>

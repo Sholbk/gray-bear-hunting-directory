@@ -104,7 +104,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full bg-accent text-gray-dark py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
+        className="w-full bg-accent text-white py-3 rounded-xl font-semibold hover:bg-accent-light transition-colors"
       >
         Send Message
       </button>

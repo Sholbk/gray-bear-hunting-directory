@@ -116,6 +116,8 @@ export default function FilterSidebar() {
             { value: "shooting-range", label: "Shooting Ranges" },
             { value: "education", label: "Education" },
             { value: "processor", label: "Game Processing" },
+            { value: "land", label: "Land & Leases" },
+            { value: "photographer", label: "Photographers" },
           ] as { value: string; label: string; extraValue?: string }[]).map((opt) => (
             <label
               key={opt.value}

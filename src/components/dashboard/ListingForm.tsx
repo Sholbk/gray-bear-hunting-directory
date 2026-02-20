@@ -28,6 +28,7 @@ const typeOptions = [
   { value: "outfitter", label: "Outfitter" },
   { value: "charter", label: "Fishing Charter" },
   { value: "lodge", label: "Accommodation" },
+  { value: "land", label: "Land & Lease" },
   { value: "boat", label: "Boats & Vehicles" },
   { value: "taxidermy", label: "Taxidermy" },
   { value: "retailer", label: "Retailer" },
@@ -35,6 +36,7 @@ const typeOptions = [
   { value: "shooting-range", label: "Shooting Range" },
   { value: "education", label: "Education & Safety" },
   { value: "processor", label: "Game Processing" },
+  { value: "photographer", label: "Photographer / Videographer" },
 ];
 
 export default function ListingForm({ initialData, mode }: ListingFormProps) {
@@ -72,22 +74,22 @@ export default function ListingForm({ initialData, mode }: ListingFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
-          <label className="block text-sm font-medium text-gray-text mb-1">Business Name</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Business Name</label>
           <input
             type="text"
             required
             value={formData.name}
             onChange={(e) => update("name", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Type</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Type</label>
           <select
             value={formData.type}
             onChange={(e) => update("type", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           >
             {typeOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -96,98 +98,98 @@ export default function ListingForm({ initialData, mode }: ListingFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Phone</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Phone</label>
           <input
             type="tel"
             value={formData.phone}
             onChange={(e) => update("phone", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">City</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">City</label>
           <input
             type="text"
             required
             value={formData.city}
             onChange={(e) => update("city", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">State</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">State</label>
           <input
             type="text"
             required
             value={formData.state}
             onChange={(e) => update("state", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Website</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Website</label>
           <input
             type="url"
             value={formData.website}
             onChange={(e) => update("website", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Species (comma-separated)</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Species (comma-separated)</label>
           <input
             type="text"
             value={formData.species}
             onChange={(e) => update("species", e.target.value)}
             placeholder="Elk, Mule Deer, Black Bear"
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Success Rate (%)</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Success Rate (%)</label>
           <input
             type="number"
             min="0"
             max="100"
             value={formData.successRate}
             onChange={(e) => update("successRate", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Min Price ($)</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Min Price ($)</label>
           <input
             type="number"
             min="0"
             value={formData.priceMin}
             onChange={(e) => update("priceMin", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Max Price ($)</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Max Price ($)</label>
           <input
             type="number"
             min="0"
             value={formData.priceMax}
             onChange={(e) => update("priceMax", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-text mb-1">Physical Intensity (1-5)</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Physical Intensity (1-5)</label>
           <select
             value={formData.physicalIntensity}
             onChange={(e) => update("physicalIntensity", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent"
           >
             <option value="1">1 - Easy</option>
             <option value="2">2 - Moderate</option>
@@ -198,13 +200,13 @@ export default function ListingForm({ initialData, mode }: ListingFormProps) {
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm font-medium text-gray-text mb-1">Description</label>
+          <label className="block text-sm font-medium text-text-primary mb-1">Description</label>
           <textarea
             rows={5}
             required
             value={formData.description}
             onChange={(e) => update("description", e.target.value)}
-            className="w-full px-3 py-2 bg-gray-medium border border-gray-light rounded-lg text-gray-text text-sm focus:outline-none focus:border-amber-brand resize-none"
+            className="w-full px-3 py-2 bg-bg-input border border-border rounded-lg text-text-primary text-sm focus:outline-none focus:border-accent resize-none"
           />
         </div>
       </div>
@@ -213,14 +215,14 @@ export default function ListingForm({ initialData, mode }: ListingFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="bg-amber-brand text-gray-dark px-6 py-3 rounded-lg font-semibold hover:bg-amber-light transition-colors disabled:opacity-50"
+          className="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors disabled:opacity-50"
         >
           {loading ? "Saving..." : mode === "create" ? "Create Listing" : "Update Listing"}
         </button>
         <button
           type="button"
           onClick={() => router.back()}
-          className="border border-gray-light text-gray-text px-6 py-3 rounded-lg font-semibold hover:border-amber-brand hover:text-amber-brand transition-colors"
+          className="border border-border text-text-primary px-6 py-3 rounded-lg font-semibold hover:border-accent hover:text-accent transition-colors"
         >
           Cancel
         </button>

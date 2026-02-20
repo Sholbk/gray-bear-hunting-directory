@@ -15,7 +15,7 @@ export default function PricingCard({ plan }: PricingCardProps) {
       }`}
     >
       {plan.highlighted && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-gray-dark text-xs font-bold px-3 py-1 rounded-full">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
           Most Popular
         </div>
       )}
@@ -49,7 +49,7 @@ export default function PricingCard({ plan }: PricingCardProps) {
         href={`/signup?plan=${plan.tier}`}
         className={`block text-center py-3 rounded-xl font-semibold transition-colors ${
           plan.highlighted
-            ? "bg-accent text-gray-dark hover:bg-accent-light"
+            ? "bg-accent text-white hover:bg-accent-light"
             : "border border-border text-text-primary hover:border-accent hover:text-accent"
         }`}
       >
