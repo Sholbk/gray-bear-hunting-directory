@@ -3,6 +3,7 @@ interface EventCardProps {
   date: string;
   location?: string;
   category: string;
+  url?: string;
 }
 
 const categoryColors: Record<string, string> = {
@@ -11,6 +12,7 @@ const categoryColors: Record<string, string> = {
   class: "bg-purple-500/10 text-purple-400",
   tournament: "bg-accent/10 text-accent",
   meetup: "bg-pink-500/10 text-pink-400",
+  deadline: "bg-red-500/10 text-red-400",
 };
 
 const categoryLabels: Record<string, string> = {
@@ -19,13 +21,14 @@ const categoryLabels: Record<string, string> = {
   class: "Class",
   tournament: "Tournament",
   meetup: "Meetup",
+  deadline: "Deadline",
 };
 
-export default function EventCard({ title, date, location, category }: EventCardProps) {
+export default function EventCard({ title, date, location, category, url }: EventCardProps) {
   const eventDate = new Date(date);
 
-  return (
-    <div className="bg-bg-card rounded-xl p-5 border border-border flex flex-col sm:flex-row sm:items-center gap-4 hover:border-accent transition-all">
+  const content = (
+    <>
       <div className="flex-shrink-0 w-16 text-center">
         <div className="text-2xl font-bold text-accent">
           {eventDate.getDate()}
@@ -45,6 +48,18 @@ export default function EventCard({ title, date, location, category }: EventCard
       >
         {categoryLabels[category] || category}
       </span>
-    </div>
+    </>
   );
+
+  const className = "bg-bg-card rounded-xl p-5 border border-border flex flex-col sm:flex-row sm:items-center gap-4 hover:border-accent transition-all";
+
+  if (url) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+        {content}
+      </a>
+    );
+  }
+
+  return <div className={className}>{content}</div>;
 }

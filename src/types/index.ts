@@ -105,7 +105,7 @@ export interface CalendarEvent {
   date: string;
   end_date?: string;
   location?: string;
-  category: "season" | "expo" | "class" | "tournament" | "meetup";
+  category: "season" | "expo" | "class" | "tournament" | "meetup" | "deadline";
   url?: string;
 }
 

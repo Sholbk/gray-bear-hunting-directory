@@ -18,6 +18,7 @@ const categoryColors: Record<string, string> = {
   class: "bg-purple-500",
   tournament: "bg-accent",
   meetup: "bg-pink-500",
+  deadline: "bg-red-500",
 };
 
 export default function CalendarGrid({ events }: CalendarGridProps) {
