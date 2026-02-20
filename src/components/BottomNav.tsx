@@ -9,7 +9,7 @@ const navItems = [
   { label: "Map", icon: "map", href: "/state" },
   { label: "Add", icon: "add", href: "/signup", isCenter: true },
   { label: "Search", icon: "search", href: "/search" },
-  { label: "Profile", icon: "person", href: "/dashboard" },
+  { label: "Profile", icon: "person", href: "/login" },
 ];
 
 export default function BottomNav() {
