@@ -36,7 +36,7 @@ const typeLabels: Record<string, string> = {
   guide: "Guide & Outfitter",
   outfitter: "Guide & Outfitter",
   charter: "Fishing Charter",
-  lodge: "Lodge",
+  lodge: "Accommodation",
   land: "Land",
   boat: "Boats & Vehicles",
   taxidermy: "Taxidermy",

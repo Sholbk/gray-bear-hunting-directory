@@ -14,7 +14,7 @@ const typeLabels: Record<string, string> = {
   guide: "Guide & Outfitter",
   outfitter: "Guide & Outfitter",
   charter: "Charter",
-  lodge: "Lodge",
+  lodge: "Accommodation",
   land: "Land",
   boat: "Boat/Vehicle",
   taxidermy: "Taxidermy",

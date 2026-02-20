@@ -16,9 +16,9 @@ export const categories: Category[] = [
     types: ["charter"],
   },
   {
-    slug: "lodges",
-    title: "Hunting Lodges",
-    description: "Hunting lodges and ranches with accommodations for guided and self-guided hunts.",
+    slug: "accommodations",
+    title: "Accommodations",
+    description: "Hunting lodges, cabins, and camping spots for guided and self-guided outdoor adventures.",
     icon: "🏠",
     types: ["lodge"],
   },

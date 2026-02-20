@@ -108,7 +108,7 @@ export default function FilterSidebar() {
           {([
             { value: "guide", label: "Guides & Outfitters", extraValue: "outfitter" },
             { value: "charter", label: "Charters" },
-            { value: "lodge", label: "Lodges" },
+            { value: "lodge", label: "Accommodations" },
             { value: "boat", label: "Boats & Vehicles" },
             { value: "taxidermy", label: "Taxidermy" },
             { value: "retailer", label: "Retailers" },

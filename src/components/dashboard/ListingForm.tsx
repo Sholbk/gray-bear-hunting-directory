@@ -27,7 +27,7 @@ const typeOptions = [
   { value: "guide", label: "Hunting Guide" },
   { value: "outfitter", label: "Outfitter" },
   { value: "charter", label: "Fishing Charter" },
-  { value: "lodge", label: "Lodge" },
+  { value: "lodge", label: "Accommodation" },
   { value: "boat", label: "Boats & Vehicles" },
   { value: "taxidermy", label: "Taxidermy" },
   { value: "retailer", label: "Retailer" },
