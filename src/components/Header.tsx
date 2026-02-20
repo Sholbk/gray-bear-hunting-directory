@@ -42,7 +42,7 @@ export default function Header() {
               alt="Gray Bear Hunting Directory"
               width={180}
               height={28}
-              className="h-7 w-auto brightness-0 invert"
+              className="h-7 w-auto"
               priority
             />
           </Link>
@@ -69,7 +69,7 @@ export default function Header() {
                 alt="Gray Bear Hunting Directory"
                 width={240}
                 height={37}
-                className="h-9 w-auto brightness-0 invert"
+                className="h-9 w-auto"
                 priority
               />
             </Link>
