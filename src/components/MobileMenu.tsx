@@ -11,8 +11,7 @@ interface MobileMenuProps {
 
 const findLinks = [
   { label: "Browse All Listings", href: "/search" },
-  { label: "Hunting Guides", href: "/search?type=guide" },
-  { label: "Outfitters", href: "/search?type=outfitter" },
+  { label: "Guides & Outfitters", href: "/search?type=guide&type=outfitter" },
   { label: "Fishing Charters", href: "/search?type=charter" },
   { label: "Browse by State", href: "/state" },
   { label: "Hunting Species", href: "/hunt" },

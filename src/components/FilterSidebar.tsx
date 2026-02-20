@@ -39,10 +39,12 @@ export default function FilterSidebar() {
     [router, searchParams]
   );
 
-  const handleTypeToggle = (type: string) => {
-    const types = currentTypes.includes(type)
-      ? currentTypes.filter((t) => t !== type)
-      : [...currentTypes, type];
+  const handleTypeToggle = (type: string, extraType?: string) => {
+    const valuesToToggle = extraType ? [type, extraType] : [type];
+    const isActive = currentTypes.includes(type);
+    const types = isActive
+      ? currentTypes.filter((t) => !valuesToToggle.includes(t))
+      : [...currentTypes, ...valuesToToggle];
     updateParams({ type: types.length > 0 ? types : null });
   };
 
@@ -103,9 +105,8 @@ export default function FilterSidebar() {
           Type
         </label>
         <div className="space-y-2">
-          {[
-            { value: "guide", label: "Guides" },
-            { value: "outfitter", label: "Outfitters" },
+          {([
+            { value: "guide", label: "Guides & Outfitters", extraValue: "outfitter" },
             { value: "charter", label: "Charters" },
             { value: "lodge", label: "Lodges" },
             { value: "boat", label: "Boats & Vehicles" },
@@ -115,7 +116,7 @@ export default function FilterSidebar() {
             { value: "shooting-range", label: "Shooting Ranges" },
             { value: "education", label: "Education" },
             { value: "processor", label: "Game Processing" },
-          ].map((opt) => (
+          ] as { value: string; label: string; extraValue?: string }[]).map((opt) => (
             <label
               key={opt.value}
               className="flex items-center gap-2 cursor-pointer"
@@ -123,7 +124,7 @@ export default function FilterSidebar() {
               <input
                 type="checkbox"
                 checked={currentTypes.includes(opt.value)}
-                onChange={() => handleTypeToggle(opt.value)}
+                onChange={() => handleTypeToggle(opt.value, opt.extraValue)}
                 className="rounded border-border bg-bg-input text-primary focus:ring-primary"
               />
               <span className="text-text-secondary text-sm">{opt.label}</span>

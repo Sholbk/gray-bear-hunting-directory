@@ -33,8 +33,8 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
 }
 
 const typeLabels: Record<string, string> = {
-  guide: "Hunting Guide",
-  outfitter: "Outfitter",
+  guide: "Guide & Outfitter",
+  outfitter: "Guide & Outfitter",
   charter: "Fishing Charter",
   lodge: "Lodge",
   land: "Land",

@@ -11,8 +11,8 @@ interface ListingCardProps {
 }
 
 const typeLabels: Record<string, string> = {
-  guide: "Guide",
-  outfitter: "Outfitter",
+  guide: "Guide & Outfitter",
+  outfitter: "Guide & Outfitter",
   charter: "Charter",
   lodge: "Lodge",
   land: "Land",

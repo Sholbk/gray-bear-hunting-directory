@@ -2,18 +2,11 @@ import { Category } from "@/types";
 
 export const categories: Category[] = [
   {
-    slug: "guides",
-    title: "Hunting Guides",
-    description: "Expert local guides for big game, upland birds, waterfowl, and more.",
+    slug: "guides-outfitters",
+    title: "Guides & Outfitters",
+    description: "Expert hunting guides and full-service outfitters for big game, upland birds, waterfowl, and more.",
     icon: "🎯",
-    types: ["guide"],
-  },
-  {
-    slug: "outfitters",
-    title: "Outfitters",
-    description: "Full-service outfitters with lodging, meals, and gear included.",
-    icon: "🏕️",
-    types: ["outfitter"],
+    types: ["guide", "outfitter"],
   },
   {
     slug: "charters",
