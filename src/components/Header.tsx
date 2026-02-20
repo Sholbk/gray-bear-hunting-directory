@@ -40,9 +40,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Gray Bear Hunting Directory"
-              width={180}
-              height={28}
-              className="h-7 w-auto"
+              width={360}
+              height={56}
+              className="h-14 w-auto"
               priority
             />
           </Link>
@@ -67,9 +67,9 @@ export default function Header() {
               <Image
                 src="/logo.png"
                 alt="Gray Bear Hunting Directory"
-                width={240}
-                height={37}
-                className="h-9 w-auto"
+                width={480}
+                height={74}
+                className="h-[74px] w-auto"
                 priority
               />
             </Link>

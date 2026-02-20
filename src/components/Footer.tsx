@@ -12,9 +12,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Gray Bear Hunting Directory"
-                width={200}
-                height={31}
-                className="h-8 w-auto"
+                width={400}
+                height={62}
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-text-inverse/60 text-sm leading-relaxed">
