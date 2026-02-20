@@ -96,7 +96,7 @@ export function filterListings(params: FilterParams): Listing[] {
   if (params.species) {
     const sp = params.species.toLowerCase();
     results = results.filter((l) =>
-      l.species.some((s) => s.toLowerCase().includes(sp))
+      l.species.some((s) => s.toLowerCase() === sp)
     );
   }
 

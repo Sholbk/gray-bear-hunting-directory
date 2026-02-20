@@ -85,6 +85,48 @@ export default function FilterSidebar() {
         )}
       </div>
 
+      {/* State */}
+      <div>
+        <label className="text-text-primary text-sm font-medium block mb-2">
+          State
+        </label>
+        <select
+          value={currentState}
+          onChange={(e) =>
+            updateParams({ state: e.target.value || null })
+          }
+          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        >
+          <option value="">All States</option>
+          {states.map((state) => (
+            <option key={state} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Species */}
+      <div>
+        <label className="text-text-primary text-sm font-medium block mb-2">
+          Species / Game
+        </label>
+        <select
+          value={currentSpecies}
+          onChange={(e) =>
+            updateParams({ species: e.target.value || null })
+          }
+          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        >
+          <option value="">All Species</option>
+          {species.map((s) => (
+            <option key={s} value={s}>
+              {s}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Search */}
       <div>
         <label className="text-text-primary text-sm font-medium block mb-2">
@@ -229,48 +271,6 @@ export default function FilterSidebar() {
             </button>
           ))}
         </div>
-      </div>
-
-      {/* State */}
-      <div>
-        <label className="text-text-primary text-sm font-medium block mb-2">
-          State
-        </label>
-        <select
-          value={currentState}
-          onChange={(e) =>
-            updateParams({ state: e.target.value || null })
-          }
-          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-          <option value="">All States</option>
-          {states.map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Species */}
-      <div>
-        <label className="text-text-primary text-sm font-medium block mb-2">
-          Species / Game
-        </label>
-        <select
-          value={currentSpecies}
-          onChange={(e) =>
-            updateParams({ species: e.target.value || null })
-          }
-          className="w-full bg-bg-input border border-border text-text-primary text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-          <option value="">All Species</option>
-          {species.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
       </div>
     </div>
   );
