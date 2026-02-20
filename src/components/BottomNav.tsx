@@ -26,7 +26,7 @@ export default function BottomNav() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center justify-center w-14 h-14 -mt-5 rounded-full bg-accent text-white shadow-lg shadow-accent/30"
+                className="flex items-center justify-center w-14 h-14 -mt-5 rounded-full bg-accent text-white shadow-lg shadow-accent/40"
               >
                 <Icon name={item.icon} className="w-[30px] h-[30px]" />
               </Link>

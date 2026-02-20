@@ -42,9 +42,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 lg:hidden">
       <div className="fixed inset-0 bg-black/60" onClick={onClose} />
       <div className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-bg-card border-l border-border overflow-y-auto">
-        <div className="flex items-center justify-between p-4 border-b border-border">
-          <span className="text-primary font-bold text-lg">Menu</span>
-          <button onClick={onClose} className="p-2 text-text-muted hover:text-text-primary">
+        <div className="flex items-center justify-between p-4 border-b border-border bg-primary">
+          <span className="text-white font-bold text-lg font-[family-name:var(--font-montserrat)]">Menu</span>
+          <button onClick={onClose} className="p-2 text-white/70 hover:text-white">
             <Icon name="close" className="w-6 h-6" />
           </button>
         </div>

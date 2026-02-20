@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BearLogo from "./BearLogo";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,20 +8,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <BearLogo className="w-6 h-6" />
-              <h3 className="font-bold text-lg">Gray Bear</h3>
+            <div className="mb-3">
+              <Image
+                src="/logo.png"
+                alt="Gray Bear Hunting Directory"
+                width={200}
+                height={31}
+                className="h-8 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-text-inverse/60 text-sm leading-relaxed">
-              Find your optimal hunt. Browse verified guides, outfitters, and
-              charters filtered by success rates, price, physical intensity, and
-              honest reviews.
+              The trusted directory for hunting and fishing resources. Find verified guides, outfitters, and
+              charters across all 50 states.
             </p>
           </div>
 
           {/* Directory */}
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80">
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80 font-[family-name:var(--font-montserrat)]">
               Directory
             </h4>
             <ul className="space-y-2">
@@ -50,7 +54,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80">
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80 font-[family-name:var(--font-montserrat)]">
               Company
             </h4>
             <ul className="space-y-2">
@@ -79,7 +83,7 @@ export default function Footer() {
 
           {/* For Members */}
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80">
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-text-inverse/80 font-[family-name:var(--font-montserrat)]">
               For Members
             </h4>
             <ul className="space-y-2">

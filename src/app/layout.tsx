@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ThemeProvider from "@/components/ThemeProvider";
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: "Gray Bear Hunting Directory",
   description:
-    "Find your optimal hunt. Browse verified guides, outfitters, and charters filtered by success rates, price, physical intensity, and honest reviews.",
+    "The Trusted Directory for Hunting & Fishing Resources. Find verified guides, outfitters, and charters filtered by success rates, price, physical intensity, and honest reviews.",
 };
 
 export default function RootLayout({
@@ -27,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body
-        className={`${workSans.variable} antialiased min-h-screen flex flex-col font-[family-name:var(--font-work-sans)]`}
+        className={`${inter.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col font-[family-name:var(--font-inter)]`}
       >
         <ThemeProvider>
           <Header />

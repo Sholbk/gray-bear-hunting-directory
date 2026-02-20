@@ -21,72 +21,77 @@ export default function HomeSearch() {
   };
 
   return (
-    <section className="px-4 py-6 max-w-md mx-auto lg:max-w-3xl">
-      <h1 className="text-2xl lg:text-4xl font-bold text-text-primary mb-1">
-        Find Your Next
-      </h1>
-      <h1 className="text-2xl lg:text-4xl font-bold text-primary mb-4">
-        Adventure
-      </h1>
+    <section className="relative bg-primary/10 overflow-hidden">
+      <div className="px-4 py-10 max-w-md mx-auto lg:max-w-3xl lg:py-16">
+        <h1 className="text-2xl lg:text-4xl font-bold text-text-primary mb-2 font-[family-name:var(--font-montserrat)]">
+          The Trusted Directory for
+        </h1>
+        <h1 className="text-2xl lg:text-4xl font-bold text-accent mb-2 font-[family-name:var(--font-montserrat)]">
+          Hunting & Fishing Resources
+        </h1>
+        <p className="text-text-secondary text-sm lg:text-base mb-6 max-w-xl">
+          Find verified guides, outfitters, charters, and services across all 50 states.
+        </p>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="relative">
-          <Icon name="search" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search guides, outfitters, species..."
-            className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-          />
-        </div>
-
-        <div className="flex gap-3">
-          <div className="relative flex-1">
-            <Icon name="location_on" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
-            <select
-              value={region}
-              onChange={(e) => setRegion(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none"
-            >
-              <option value="">All States</option>
-              {states.map((s) => (
-                <option key={s.abbreviation} value={s.name}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <div className="relative">
+            <Icon name="search" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search guides, outfitters, species..."
+              className="w-full pl-10 pr-4 py-3 bg-bg-card border border-border rounded-xl text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-sm"
+            />
           </div>
-          <div className="relative flex-1">
-            <Icon name="pets" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
-            <select
-              value={species}
-              onChange={(e) => setSpecies(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none"
-            >
-              <option value="">Species</option>
-              <option value="Elk">Elk</option>
-              <option value="Whitetail">Whitetail Deer</option>
-              <option value="Turkey">Turkey</option>
-              <option value="Duck">Duck</option>
-              <option value="Pheasant">Pheasant</option>
-              <option value="Salmon">Salmon</option>
-              <option value="Bass">Bass</option>
-              <option value="Bear">Bear</option>
-              <option value="Moose">Moose</option>
-              <option value="Quail">Quail</option>
-            </select>
-          </div>
-        </div>
 
-        <button
-          type="submit"
-          className="w-full bg-accent hover:bg-accent-light text-white py-3.5 rounded-xl font-semibold text-sm transition-colors flex items-center justify-center gap-2"
-        >
-          <Icon name="search" className="w-[18px] h-[18px]" />
-          Search Expeditions
-        </button>
-      </form>
+          <div className="flex gap-3">
+            <div className="relative flex-1">
+              <Icon name="location_on" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
+              <select
+                value={region}
+                onChange={(e) => setRegion(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-bg-card border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none shadow-sm"
+              >
+                <option value="">All States</option>
+                {states.map((s) => (
+                  <option key={s.abbreviation} value={s.name}>
+                    {s.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="relative flex-1">
+              <Icon name="pets" className="w-[18px] h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
+              <select
+                value={species}
+                onChange={(e) => setSpecies(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-bg-card border border-border rounded-xl text-text-primary text-sm focus:outline-none focus:border-primary appearance-none shadow-sm"
+              >
+                <option value="">Species</option>
+                <option value="Elk">Elk</option>
+                <option value="Whitetail">Whitetail Deer</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Duck">Duck</option>
+                <option value="Pheasant">Pheasant</option>
+                <option value="Salmon">Salmon</option>
+                <option value="Bass">Bass</option>
+                <option value="Bear">Bear</option>
+                <option value="Moose">Moose</option>
+                <option value="Quail">Quail</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-accent hover:bg-accent-light text-white py-3.5 rounded-xl font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-md"
+          >
+            <Icon name="search" className="w-[18px] h-[18px]" />
+            Search Now
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
