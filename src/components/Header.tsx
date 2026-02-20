@@ -35,7 +35,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-primary text-text-inverse">
       {/* Mobile Header */}
       <div className="lg:hidden">
-        <div className="max-w-md mx-auto px-4 flex items-center justify-between h-14">
+        <div className="max-w-2xl mx-auto px-4 flex items-center justify-between h-20">
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
@@ -62,7 +62,7 @@ export default function Header() {
       {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-24">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
