@@ -73,11 +73,11 @@ export default function CalendarPage() {
               {upcoming.slice(0, 12).map((event) => (
                 <EventCard
                   key={event.id}
+                  id={event.id}
                   title={event.title}
                   date={event.date}
                   location={event.location}
                   category={event.category}
-                  url={event.url}
                 />
               ))}
               {upcoming.length === 0 && (

@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 interface EventCardProps {
+  id?: string;
   title: string;
   date: string;
   location?: string;
@@ -24,8 +27,8 @@ const categoryLabels: Record<string, string> = {
   deadline: "Deadline",
 };
 
-export default function EventCard({ title, date, location, category, url }: EventCardProps) {
-  const eventDate = new Date(date);
+export default function EventCard({ id, title, date, location, category }: EventCardProps) {
+  const eventDate = new Date(date + "T12:00:00");
 
   const content = (
     <>
@@ -51,13 +54,14 @@ export default function EventCard({ title, date, location, category, url }: Even
     </>
   );
 
-  const className = "bg-bg-card rounded-xl p-5 border border-border flex flex-col sm:flex-row sm:items-center gap-4 hover:border-accent transition-all";
+  const className =
+    "bg-bg-card rounded-xl p-5 border border-border flex flex-col sm:flex-row sm:items-center gap-4 hover:border-accent transition-all";
 
-  if (url) {
+  if (id) {
     return (
-      <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+      <Link href={`/calendar/${id}`} className={className}>
         {content}
-      </a>
+      </Link>
     );
   }
 
