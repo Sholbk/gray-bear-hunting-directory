@@ -27,6 +27,7 @@ const categoryLinks = [
   { label: "Gun Dogs", href: "/search?type=dog-trainer" },
   { label: "Shooting Ranges", href: "/search?type=shooting-range" },
   { label: "Education & Safety", href: "/search?type=education" },
+  { label: "Game Processing", href: "/search?type=processor" },
 ];
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {

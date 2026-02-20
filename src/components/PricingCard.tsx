@@ -21,14 +21,20 @@ export default function PricingCard({ plan }: PricingCardProps) {
       )}
       <h3 className="text-xl font-bold text-text-primary mb-1">{plan.name}</h3>
       <div className="mb-4">
-        <span className="text-3xl font-bold text-accent">
-          ${plan.price_monthly}
-        </span>
-        <span className="text-text-muted text-sm">/month</span>
-        {plan.price_yearly > 0 && (
-          <p className="text-text-muted text-xs mt-1">
-            or ${plan.price_yearly}/year (save {Math.round((1 - plan.price_yearly / (plan.price_monthly * 12)) * 100)}%)
-          </p>
+        {plan.price_monthly === 0 ? (
+          <span className="text-3xl font-bold text-accent">Free</span>
+        ) : (
+          <>
+            <span className="text-3xl font-bold text-accent">
+              ${plan.price_monthly}
+            </span>
+            <span className="text-text-muted text-sm">/month</span>
+            {plan.price_yearly > 0 && (
+              <p className="text-text-muted text-xs mt-1">
+                or ${plan.price_yearly}/year (save {Math.round((1 - plan.price_yearly / (plan.price_monthly * 12)) * 100)}%)
+              </p>
+            )}
+          </>
         )}
       </div>
       <ul className="space-y-2 mb-6 flex-1">

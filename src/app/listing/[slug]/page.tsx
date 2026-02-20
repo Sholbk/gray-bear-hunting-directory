@@ -22,9 +22,12 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const listing = getListingBySlug(slug);
     if (!listing) return { title: "Listing Not Found" };
+    const desc = listing.description
+      ? listing.description.slice(0, 155) + (listing.description.length > 155 ? "..." : "")
+      : `${listing.name} — ${listing.location.city ? listing.location.city + ", " : ""}${listing.location.state || ""}. Browse details, contact info, and reviews on Gray Bear Hunting Directory.`;
     return {
       title: `${listing.name} | Gray Bear Hunting Directory`,
-      description: listing.description.slice(0, 160),
+      description: desc,
     };
   });
 }
@@ -132,9 +135,11 @@ export default async function ListingDetailPage({
               </p>
               <div className="flex items-center gap-2">
                 <RatingStars rating={listing.rating} size="md" />
-                <span className="text-text-muted text-sm">
-                  ({listing.reviewCount})
-                </span>
+                {listing.reviewCount > 0 && (
+                  <span className="text-text-muted text-sm">
+                    ({listing.reviewCount})
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -161,33 +166,41 @@ export default async function ListingDetailPage({
             </section>
 
             {/* Species Tags */}
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-text-primary mb-4">
-                Species & Game
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {listing.species.map((s) => (
-                  <Link
-                    key={s}
-                    href={`/search?species=${encodeURIComponent(s)}`}
-                    className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/20 transition-colors"
-                  >
-                    {s}
-                  </Link>
-                ))}
-              </div>
-            </section>
+            {listing.species.length > 0 && (
+              <section className="mb-10">
+                <h2 className="text-xl font-bold text-text-primary mb-4">
+                  Species & Game
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {listing.species.map((s) => (
+                    <Link
+                      key={s}
+                      href={`/search?species=${encodeURIComponent(s)}`}
+                      className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/20 transition-colors"
+                    >
+                      {s}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Reviews */}
             <section>
               <h2 className="text-xl font-bold text-text-primary mb-4">
-                Reviews ({listing.reviews.length})
+                Reviews{listing.reviews.length > 0 ? ` (${listing.reviews.length})` : ""}
               </h2>
-              <div className="space-y-4">
-                {listing.reviews.map((review, index) => (
-                  <ReviewCard key={index} review={review} />
-                ))}
-              </div>
+              {listing.reviews.length > 0 ? (
+                <div className="space-y-4">
+                  {listing.reviews.map((review, index) => (
+                    <ReviewCard key={index} review={review} />
+                  ))}
+                </div>
+              ) : (
+                <p className="text-text-muted italic">
+                  No reviews yet. Be the first to share your experience!
+                </p>
+              )}
             </section>
           </div>
 

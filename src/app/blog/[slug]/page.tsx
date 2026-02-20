@@ -278,6 +278,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return { title: "Blog Post Not Found | Gray Bear Hunting Directory" };
   return {
     title: `${post.title} | Gray Bear Hunting Directory`,
+    description: post.content.replace(/[#*\-\n]+/g, " ").trim().slice(0, 160),
   };
 }
 

@@ -12,7 +12,7 @@ export default function SearchPage() {
     <Suspense
       fallback={
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-gray-muted text-center py-16">
+          <div className="text-text-muted text-center py-16">
             Loading listings...
           </div>
         </div>

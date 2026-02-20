@@ -5,7 +5,14 @@ export const metadata = {
   description: "Hunting tips, fishing reports, gear reviews, and outdoor adventure stories from the Gray Bear team.",
 };
 
-const placeholderPosts = [
+const tagIcons: Record<string, string> = {
+  "Hunting Tips": "🎯",
+  "Fishing": "🎣",
+  "Gear Reviews": "🎒",
+  "Conservation": "🌲",
+};
+
+const posts = [
   {
     slug: "top-elk-hunting-tips",
     title: "Top 10 Elk Hunting Tips for Beginners",
@@ -64,14 +71,14 @@ export default function BlogPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeholderPosts.map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
               className="bg-bg-card rounded-xl border border-border overflow-hidden hover:border-accent transition-all group"
             >
-              <div className="h-48 bg-bg-input flex items-center justify-center">
-                <span className="text-text-muted text-sm">Image Coming Soon</span>
+              <div className="h-48 bg-gradient-to-br from-primary/15 to-accent/10 flex items-center justify-center">
+                <span className="text-5xl">{tagIcons[post.tag] || "📝"}</span>
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-3">

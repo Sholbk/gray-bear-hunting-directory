@@ -48,6 +48,23 @@ export default function AboutPage() {
               With decades of combined experience in the field, we understand what makes a great hunting
               or fishing experience — and what to watch out for.
             </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { name: "Jake Morrison", role: "Founder & CEO", bg: "from-primary/20 to-primary/5" },
+                { name: "Sarah Chen", role: "Head of Partnerships", bg: "from-accent/20 to-accent/5" },
+                { name: "Mike Rawlings", role: "Content & Community", bg: "from-primary/15 to-accent/10" },
+              ].map((member) => (
+                <div key={member.name} className="bg-bg-card rounded-xl border border-border p-5 text-center">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.bg} mx-auto mb-3 flex items-center justify-center`}>
+                    <span className="text-2xl font-bold text-primary/60">
+                      {member.name.split(" ").map((n) => n[0]).join("")}
+                    </span>
+                  </div>
+                  <h3 className="text-text-primary font-semibold">{member.name}</h3>
+                  <p className="text-text-muted text-sm">{member.role}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <div className="bg-bg-card rounded-xl p-8 border border-border text-center">

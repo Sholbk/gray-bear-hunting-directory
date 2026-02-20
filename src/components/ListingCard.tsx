@@ -67,9 +67,11 @@ export default function ListingCard({ listing }: ListingCardProps) {
         </p>
         <div className="flex items-center gap-3 mb-3">
           <RatingStars rating={listing.rating} size="sm" />
-          <span className="text-text-muted text-xs">
-            ({listing.reviewCount})
-          </span>
+          {listing.reviewCount > 0 && (
+            <span className="text-text-muted text-xs">
+              ({listing.reviewCount})
+            </span>
+          )}
         </div>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {listing.species.slice(0, 3).map((s) => (
