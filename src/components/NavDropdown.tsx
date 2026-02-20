@@ -32,7 +32,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-white/80 hover:text-white transition-colors text-sm font-medium"
+        className="flex items-center gap-1 text-text-inverse/80 hover:text-white transition-colors text-sm font-medium"
       >
         {label}
         <Icon name="expand_more" className={`w-[18px] h-[18px] transition-transform ${open ? "rotate-180" : ""}`} />
@@ -44,7 +44,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm text-text-primary hover:text-accent hover:bg-bg-input transition-colors"
+              className="block px-4 py-2 text-sm text-text-primary hover:text-primary hover:bg-bg-input transition-colors"
             >
               {item.label}
             </Link>
