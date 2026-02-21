@@ -7,6 +7,7 @@ import SuccessRateBadge from "@/components/SuccessRateBadge";
 import IntensityMeter from "@/components/IntensityMeter";
 import PriceRange from "@/components/PriceRange";
 import ReviewCard from "@/components/ReviewCard";
+import ListingMap from "@/components/ListingMap";
 
 // Generate a small subset at build time; the rest render on-demand
 export function generateStaticParams() {
@@ -164,6 +165,19 @@ export default async function ListingDetailPage({
                 </p>
               )}
             </section>
+
+            {/* Location Map */}
+            {listing.coordinates && (
+              <section className="mb-10">
+                <h2 className="text-xl font-bold text-text-primary mb-4">Location</h2>
+                <ListingMap
+                  name={listing.name}
+                  coordinates={listing.coordinates}
+                  city={listing.location.city}
+                  state={listing.location.state}
+                />
+              </section>
+            )}
 
             {/* Species Tags */}
             {listing.species.length > 0 && (

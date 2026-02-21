@@ -26,6 +26,7 @@ export interface Listing {
   type: ListingType;
   description: string;
   location: { city: string; state: string };
+  coordinates: { lat: number; lng: number } | null;
   species: string[];
   successRate: number;
   priceRange: { min: number; max: number };

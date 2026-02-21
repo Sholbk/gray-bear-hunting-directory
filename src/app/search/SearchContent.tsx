@@ -2,15 +2,26 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import FilterSidebar from "@/components/FilterSidebar";
 import ListingGrid from "@/components/ListingGrid";
 import { filterListings } from "@/lib/listings";
 import { FilterParams } from "@/types";
 
+const SearchMap = dynamic(() => import("@/components/SearchMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-bg-input rounded-2xl animate-pulse h-[600px]" />
+  ),
+});
+
+type ViewMode = "list" | "split" | "map";
+
 export default function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [showFilters, setShowFilters] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>("list");
 
   const sort = (searchParams.get("sort") as FilterParams["sort"]) || "relevance";
 
@@ -86,7 +97,24 @@ export default function SearchContent() {
 
         {/* Results */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center justify-end mb-4">
+          <div className="flex items-center justify-between mb-4">
+            {/* View Toggle */}
+            <div className="flex items-center gap-1 bg-bg-input rounded-xl p-1 border border-border">
+              {(["list", "split", "map"] as const).map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setViewMode(mode)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                    viewMode === mode
+                      ? "bg-accent text-white"
+                      : "text-text-muted hover:text-primary"
+                  }`}
+                >
+                  {mode === "list" ? "List" : mode === "map" ? "Map" : "Split"}
+                </button>
+              ))}
+            </div>
+
             <div className="flex items-center gap-2">
               <span className="text-sm text-text-muted">Sort by:</span>
               <select
@@ -102,7 +130,24 @@ export default function SearchContent() {
               </select>
             </div>
           </div>
-          <ListingGrid listings={results} />
+
+          {/* List View */}
+          {viewMode === "list" && <ListingGrid listings={results} />}
+
+          {/* Map View */}
+          {viewMode === "map" && <SearchMap listings={results} />}
+
+          {/* Split View */}
+          {viewMode === "split" && (
+            <div className="flex gap-6">
+              <div className="w-1/2 min-w-0">
+                <ListingGrid listings={results} />
+              </div>
+              <div className="w-1/2 sticky top-24 self-start">
+                <SearchMap listings={results} />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
