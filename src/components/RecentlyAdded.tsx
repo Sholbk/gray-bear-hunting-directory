@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllListings } from "@/lib/listings";
 import Icon from "@/components/Icon";
+import { getPlaceholderImage } from "@/lib/placeholders";
 
 export default function RecentlyAdded() {
   // Get non-featured listings as "recently added"
@@ -24,18 +25,12 @@ export default function RecentlyAdded() {
               href={`/listing/${listing.slug}`}
               className="flex items-center gap-3 bg-bg-card rounded-xl p-3 border border-border hover:shadow-sm transition-shadow"
             >
-              {listing.image ? (
-                <img
-                  src={listing.image}
-                  alt={listing.name}
-                  className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name={listing.type === "guide" ? "hiking" : listing.type === "charter" ? "sailing" : listing.type === "outfitter" ? "camping" : listing.type === "lodge" ? "cabin" : "location_on"} className="w-6 h-6 text-primary/40" />
-                </div>
-              )}
+              <img
+                src={listing.image || getPlaceholderImage(listing.type)}
+                alt={listing.name}
+                className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
+                loading="lazy"
+              />
 
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-text-primary text-sm truncate">

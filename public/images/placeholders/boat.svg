@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#2d4a3e"/>
+  <g transform="translate(400, 165)" fill="none" stroke="#ffffff" stroke-width="3">
+    <path d="M-50,15 L-40,35 L40,35 L50,15 Z"/>
+    <line x1="0" y1="15" x2="0" y2="-35"/>
+    <path d="M0,-35 L35,-10 L0,-5" fill="#ffffff" opacity="0.4" stroke="#ffffff" stroke-width="2"/>
+    <path d="M-65,45 Q-50,38 -35,45 Q-20,52 -5,45 Q10,38 25,45 Q40,52 55,45 Q70,38 75,45" stroke-width="2" fill="none"/>
+  </g>
+  <text x="400" y="270" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="600">Boats &amp; Vehicles</text>
+</svg>

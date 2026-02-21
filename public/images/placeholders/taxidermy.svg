@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#2d4a3e"/>
+  <g transform="translate(400, 170)" fill="none" stroke="#ffffff" stroke-width="3">
+    <ellipse cx="0" cy="15" rx="22" ry="30"/>
+    <ellipse cx="-8" cy="5" rx="3" ry="4" fill="#ffffff"/>
+    <ellipse cx="8" cy="5" rx="3" ry="4" fill="#ffffff"/>
+    <ellipse cx="0" cy="18" rx="5" ry="3" fill="#ffffff"/>
+    <path d="M-15,-15 L-25,-40 L-18,-35 L-28,-50 L-15,-40 L-20,-55 L-10,-38 L-10,-20"/>
+    <path d="M15,-15 L25,-40 L18,-35 L28,-50 L15,-40 L20,-55 L10,-38 L10,-20"/>
+  </g>
+  <text x="400" y="270" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="600">Taxidermy</text>
+</svg>

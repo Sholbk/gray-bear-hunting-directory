@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#2d4a3e"/>
+  <g transform="translate(400, 170)" fill="none" stroke="#ffffff" stroke-width="3">
+    <circle cx="0" cy="0" r="45"/>
+    <circle cx="0" cy="0" r="32"/>
+    <circle cx="0" cy="0" r="19"/>
+    <circle cx="0" cy="0" r="6" fill="#ffffff"/>
+    <circle cx="8" cy="-12" r="3" fill="#ffffff" opacity="0.7" stroke="none"/>
+    <circle cx="-5" cy="8" r="3" fill="#ffffff" opacity="0.7" stroke="none"/>
+    <circle cx="15" cy="5" r="3" fill="#ffffff" opacity="0.7" stroke="none"/>
+  </g>
+  <text x="400" y="270" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="600">Shooting Range</text>
+</svg>

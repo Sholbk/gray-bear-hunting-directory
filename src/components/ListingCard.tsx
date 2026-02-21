@@ -5,6 +5,7 @@ import RatingStars from "./RatingStars";
 import SuccessRateBadge from "./SuccessRateBadge";
 import IntensityMeter from "./IntensityMeter";
 import PriceRange from "./PriceRange";
+import { getPlaceholderImage } from "@/lib/placeholders";
 
 interface ListingCardProps {
   listing: Listing;
@@ -33,18 +34,12 @@ export default function ListingCard({ listing }: ListingCardProps) {
       className="group bg-bg-card rounded-2xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10 overflow-hidden flex flex-col"
     >
       <div className="relative h-48 bg-gradient-to-br from-primary/15 to-primary/5">
-        {listing.image ? (
-          <img
-            src={listing.image}
-            alt={listing.name}
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-12 h-12 text-primary/20" />
-          </div>
-        )}
+        <img
+          src={listing.image || getPlaceholderImage(listing.type)}
+          alt={listing.name}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
         <div className="absolute top-3 left-3">
           <span className="bg-primary/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">
             {typeLabels[listing.type]}

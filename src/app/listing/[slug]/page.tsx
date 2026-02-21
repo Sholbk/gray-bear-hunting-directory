@@ -8,6 +8,7 @@ import IntensityMeter from "@/components/IntensityMeter";
 import PriceRange from "@/components/PriceRange";
 import ReviewCard from "@/components/ReviewCard";
 import ListingMap from "@/components/ListingMap";
+import { getPlaceholderImage } from "@/lib/placeholders";
 
 // Generate a small subset at build time; the rest render on-demand
 export function generateStaticParams() {
@@ -65,17 +66,11 @@ export default async function ListingDetailPage({
     <div className="bg-bg-light">
       {/* Hero Section */}
       <div className="bg-primary relative">
-        {listing.image ? (
-          <img
-            src={listing.image}
-            alt={listing.name}
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center opacity-10">
-            <Icon name={listing.type === "guide" ? "hiking" : listing.type === "outfitter" ? "camping" : listing.type === "charter" ? "sailing" : "location_on"} className="w-[200px] h-[200px] text-white" />
-          </div>
-        )}
+        <img
+          src={listing.image || getPlaceholderImage(listing.type)}
+          alt={listing.name}
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <Link
             href="/search"
