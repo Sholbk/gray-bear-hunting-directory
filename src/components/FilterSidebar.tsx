@@ -230,12 +230,12 @@ export default function FilterSidebar() {
         <label className="text-text-primary text-sm font-medium block mb-2">
           Physical Intensity
         </label>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           {["1", "2", "3", "4", "5"].map((level) => (
             <button
               key={level}
               onClick={() => handleIntensityToggle(level)}
-              className={`w-9 h-9 rounded-lg text-sm font-semibold transition-colors ${
+              className={`w-11 h-11 rounded-lg text-sm font-semibold transition-colors ${
                 currentIntensities.includes(level)
                   ? "bg-accent text-white"
                   : "bg-bg-input text-text-muted border border-border hover:border-primary hover:text-primary"
@@ -261,7 +261,7 @@ export default function FilterSidebar() {
                   ratingMin: currentRatingMin === rating ? null : rating,
                 })
               }
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              className={`px-4 py-2.5 rounded-lg text-xs font-semibold transition-colors ${
                 currentRatingMin === rating
                   ? "bg-accent text-white"
                   : "bg-bg-input text-text-muted border border-border hover:border-primary hover:text-primary"

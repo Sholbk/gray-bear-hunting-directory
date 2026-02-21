@@ -33,7 +33,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
       href={`/listing/${listing.slug}`}
       className="group bg-bg-card rounded-2xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10 overflow-hidden flex flex-col"
     >
-      <div className="relative h-48 bg-gradient-to-br from-primary/15 to-primary/5">
+      <div className="relative h-36 sm:h-48 bg-gradient-to-br from-primary/15 to-primary/5">
         <img
           src={listing.image || getPlaceholderImage(listing.type)}
           alt={listing.name}

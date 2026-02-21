@@ -105,6 +105,8 @@ export default function SearchContent() {
                   key={mode}
                   onClick={() => setViewMode(mode)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                    mode === "split" ? "hidden lg:block" : ""
+                  } ${
                     viewMode === mode
                       ? "bg-accent text-white"
                       : "text-text-muted hover:text-primary"

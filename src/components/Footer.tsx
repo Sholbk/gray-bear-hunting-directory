@@ -14,7 +14,7 @@ export default function Footer() {
                 alt="Gray Bear Hunting Directory"
                 width={400}
                 height={62}
-                className="h-16 w-auto"
+                className="h-10 sm:h-16 w-auto"
               />
             </div>
             <p className="text-text-inverse/60 text-sm leading-relaxed">
