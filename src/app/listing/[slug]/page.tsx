@@ -9,6 +9,7 @@ import PriceRange from "@/components/PriceRange";
 import ReviewCard from "@/components/ReviewCard";
 import ListingMap from "@/components/ListingMap";
 import { getPlaceholderImage } from "@/lib/placeholders";
+import { getApprovedClaim } from "@/lib/supabase/queries";
 
 // Generate a small subset at build time; the rest render on-demand
 export function generateStaticParams() {
@@ -62,6 +63,8 @@ export default async function ListingDetailPage({
     notFound();
   }
 
+  const approvedClaim = await getApprovedClaim(slug);
+
   return (
     <div className="bg-bg-light">
       {/* Hero Section */}
@@ -86,6 +89,12 @@ export default async function ListingDetailPage({
             {listing.featured && (
               <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full border border-white/30">
                 Featured
+              </span>
+            )}
+            {approvedClaim && (
+              <span className="bg-green-500/90 text-white text-sm font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                <Icon name="verified" className="w-4 h-4" />
+                Verified Owner
               </span>
             )}
           </div>

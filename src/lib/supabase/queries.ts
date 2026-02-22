@@ -1,5 +1,5 @@
 import { createClient } from "./server";
-import type { BlogPost, CalendarEvent, Profile, MembershipPlan } from "@/types";
+import type { BlogPost, CalendarEvent, ListingClaim, Profile, MembershipPlan } from "@/types";
 
 export async function getProfile(userId: string): Promise<Profile | null> {
   const supabase = await createClient();
@@ -58,4 +58,47 @@ export async function getMembershipPlans(): Promise<MembershipPlan[]> {
     .select("*")
     .order("price_monthly", { ascending: true });
   return data || [];
+}
+
+export async function getUserClaims(userId: string): Promise<ListingClaim[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("listing_claims")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+  return data || [];
+}
+
+export async function createListingClaim(
+  userId: string,
+  listingSlug: string,
+  verificationNote: string
+): Promise<ListingClaim> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("listing_claims")
+    .insert({
+      user_id: userId,
+      listing_slug: listingSlug,
+      verification_note: verificationNote,
+    })
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+export async function getApprovedClaim(
+  listingSlug: string
+): Promise<ListingClaim | null> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("listing_claims")
+    .select("*")
+    .eq("listing_slug", listingSlug)
+    .eq("status", "approved")
+    .limit(1)
+    .single();
+  return data;
 }

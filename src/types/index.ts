@@ -120,3 +120,14 @@ export interface MembershipPlan {
   max_listings: number;
   highlighted: boolean;
 }
+
+export interface ListingClaim {
+  id: string;
+  listing_slug: string;
+  user_id: string;
+  status: "pending" | "approved" | "rejected";
+  verification_note: string;
+  admin_note: string;
+  created_at: string;
+  updated_at: string;
+}
